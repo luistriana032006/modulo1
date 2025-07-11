@@ -235,6 +235,86 @@
                         </tr>
                       </tbody>
                     </table>
+                    <h3>Datos Wrapper:</h3>
+                    <p>
+                        En Java los tipos de datos wrapper pertenecen a clases dedicadas a convertir tipos de datos primitivos a no primitivos (por el momento no profundicemos en qué es una clase, lo veremos más adelante. Piensa que una clase es una caja que contiene cierta cantidad de objetos y métodos).
+                    </p>
+                    <h4>¿Por qué se convierten?</h4>
+                    <p>
+                        Se convierten principalmente para poder hacer operaciones de métodos y aplicarle lógica que lleva ese método con valores primitivos.
+                    </p>
+                    <h3 class="subsection-title">Clases Wrapper</h3>
+                    <p>Cada tipo primitivo en Java tiene una clase "envoltorio" (wrapper) que lo representa como un objeto. Esto es útil para usarlos en colecciones o APIs que requieren objetos.</p>
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>TIPO PRIMITIVO</th>
+                          <th>CLASE WRAPPER</th>
+                          <th>EJEMPLO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>byte</td>
+                          <td>Byte</td>
+                          <td><code>Byte b = Byte.valueOf((byte)10);</code></td>
+                        </tr>
+                        <tr>
+                          <td>short</td>
+                          <td>Short</td>
+                          <td><code>Short s = Short.valueOf((short)100);</code></td>
+                        </tr>
+                        <tr>
+                          <td>int</td>
+                          <td>Integer</td>
+                          <td><code>Integer i = Integer.valueOf(10000);</code></td>
+                        </tr>
+                        <tr>
+                          <td>long</td>
+                          <td>Long</td>
+                          <td><code>Long l = Long.valueOf(10000L);</code></td>
+                        </tr>
+                        <tr>
+                          <td>float</td>
+                          <td>Float</td>
+                          <td><code>Float f = Float.valueOf(10000f);</code></td>
+                        </tr>
+                        <tr>
+                          <td>double</td>
+                          <td>Double</td>
+                          <td><code>Double d = Double.valueOf(3.1416);</code></td>
+                        </tr>
+                        <tr>
+                          <td>boolean</td>
+                          <td>Boolean</td>
+                          <td><code>Boolean flag = Boolean.valueOf(true);</code></td>
+                        </tr>
+                        <tr>
+                          <td>char</td>
+                          <td>Character</td>
+                          <td><code>Character c = Character.valueOf('a');</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3>Datos no primitivos (referenciados)</h3>
+                    <p>
+                        Son objetos (instancias que pertenecen a una clase) por lo que almacenan una referencia (dirección de memoria) al dato real que está en el heap (región grande y dinámica de memoria).
+                    </p>
+                    <h4>Características:</h4>
+                    <ul>
+                        <li>Son objetos (instancias que pertenecen a una clase).</li>
+                        <li>Pueden ser <code>null</code>.</li>
+                        <li>Tienen métodos y atributos.</li>
+                        <li>Ocupan más memoria.</li>
+                        <li>Requieren más tiempo de procesamiento.</li>
+                    </ul>
+                    <h4>¿Para qué se usan?</h4>
+                    <ul>
+                        <li>Manipular cadenas de textos.</li>
+                        <li>Almacenar colecciones de datos (Arrays, listas, mapas).</li>
+                        <li>Crear estructuras complejas (objetos con atributos y métodos).</li>
+                        <li>Trabajar con APIs y librerías (casi todas usan objetos).</li>
+                    </ul>
                 </section>
 
                 <section id="variables" class="content-section">
