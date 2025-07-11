@@ -476,3 +476,37 @@ code[class*="language-"] * {
 .objetos-clases        { grid-column: 2; grid-row: 3; }
 .datos-primitivos      { grid-column: 3; grid-row: 3; }
 
+.variable-explicacion-flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.variable-explicacion-texto {
+  flex: 2;
+}
+
+.variable-explicacion-img img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .variable-explicacion-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .variable-explicacion-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .variable-explicacion-img img {
+    max-width: 120px;
+  }
+}
+
