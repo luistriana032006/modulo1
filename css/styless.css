@@ -174,3 +174,196 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(22px);
 }
+
+/* Estilos para las listas del JDK */
+.content-section ol {
+  margin-top: 1rem;
+}
+
+.content-section ol > li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--shadow-color);
+}
+
+.content-section ol > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.content-section ol > li > strong {
+  color: var(--accent-color);
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.content-section ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.content-section ul li {
+  margin-bottom: 0.3rem;
+}
+
+/* Fundamentos grid layout actualizado para 2x2 y alineación con contenido */
+.fundamentos-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
+
+.fundamentos-texto {
+  flex: 2;
+  min-width: 280px;
+}
+
+.fundamentos-cuadros {
+  flex: none;
+  display: grid;
+  grid-template-columns: 110px 110px;
+  grid-template-rows: 110px 110px;
+  gap: 1.2rem;
+  align-items: start;
+  margin-top: 2.5rem; /* Ajusta este valor para alinear con el contenido */
+}
+
+.cuadro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  width: 110px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  box-shadow: 0 2px 12px 0 rgba(80, 40, 120, 0.10);
+  background: var(--accent-color);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.cuadro.condiciones,
+.cuadro.bucles,
+.cuadro.tipos-datos,
+.cuadro.operadores {
+  background: var(--accent-color);
+}
+
+.cuadro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 24px 0 rgba(80, 40, 120, 0.18);
+}
+
+@media (max-width: 900px) {
+  .fundamentos-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .fundamentos-cuadros {
+    margin-top: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 70px;
+    gap: 1rem;
+  }
+  .cuadro {
+    height: 70px;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .fundamentos-cuadros {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 60px);
+  }
+  .cuadro {
+    height: 60px;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+/* Bloque de código tipo terminal (solo estilos base, sin modo oscuro personalizado) */
+.code-terminal {
+  margin: 2rem 0 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  background: #23272e;
+  border: 1.5px solid #23272e;
+  max-width: 600px;
+}
+
+.code-terminal-header {
+  background: #1a1d23;
+  color: #bdbdbd;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  padding: 0.5rem 1.2rem;
+  border-bottom: 1px solid #23272e;
+  letter-spacing: 0.5px;
+}
+
+.code-terminal pre[class*="language-"] {
+  background: #23272e !important;
+  color: #e0e0e0 !important;
+  margin: 0;
+  border-radius: 0;
+  padding: 1.2rem 1.5rem;
+  font-size: 1rem;
+  overflow-x: auto;
+}
+
+pre[class*="language-"], 
+code[class*="language-"], 
+pre[class*="language-"] *, 
+code[class*="language-"] * {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* --- Estilos para la Tabla de Datos --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse; /* Une los bordes de las celdas */
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.data-table th, .data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--shadow-color);
+}
+
+.data-table thead th {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Colores de fila alternos para mejor legibilidad */
+.data-table tbody tr:nth-of-type(even) {
+  background-color: var(--bg-color);
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--link-active-bg);
+}
+
+.data-table code {
+  background-color: var(--shadow-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+

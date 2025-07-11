@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentos de Programación en Java</title>
     <link rel="stylesheet" href="css/styless.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
 </head>
 <body>
 
@@ -42,16 +45,196 @@
                     <p>Java es un lenguaje de programación desarrollado por Sun Microsystems en 1995 y ahora es mantenido por Oracle. Es conocido por su versatilidad, seguridad y portabilidad.</p>
                     <h3>JDK (Java Development Kit)</h3>
                     <p>El JDK es un paquete de herramientas proporcionado por Oracle que contiene todo lo necesario para desarrollar aplicaciones en Java. Incluye el JRE (Entorno de Ejecución de Java), que a su vez contiene la JVM (Máquina Virtual de Java) y las bibliotecas de clases.</p>
+                    
+                    <h4>Componentes del JDK:</h4>
+                    <ol>
+                        <li><strong>JRE (Java Runtime Environment)</strong>
+                            <ul>
+                                <li><strong>JVM (Java Virtual Machine)</strong>: Ejecuta el bytecode (.class)</li>
+                                <li><strong>java.lang</strong>: Clases básicas como String, System</li>
+                                <li><strong>java.util</strong>: Colecciones, fechas</li>
+                                <li><strong>java.io</strong>: Manejo de archivos</li>
+                                <li><strong>java.net</strong>: Conexiones de red</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Herramientas de desarrollo</strong>
+                            <ul>
+                                <li><strong>javac</strong>: Compilador (.java → .class)</li>
+                                <li><strong>java</strong>: Ejecutador de aplicaciones</li>
+                                <li><strong>javadoc</strong>: Genera documentación HTML</li>
+                                <li><strong>jdb</strong>: Depurador</li>
+                                <li><strong>jar</strong>: Crea archivos .jar (empaquetado)</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Bibliotecas adicionales</strong>
+                            <ul>
+                                <li><strong>GUI</strong>: AWT/Swing, JavaFX</li>
+                                <li><strong>Bases de datos</strong>: JDBC</li>
+                                <li><strong>Seguridad</strong>: Criptografía</li>
+                                <li><strong>Multihilo</strong>: java.util.concurrent</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Herramientas de monitoreo/optimización</strong>
+                            <ul>
+                                <li><strong>jconsole</strong>: Monitorea recursos (CPU, memoria)</li>
+                                <li><strong>jvisualvm</strong>: Perfilador de aplicaciones</li>
+                                <li><strong>javap</strong>: Desensambla bytecode</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Utilidades para desarrollo avanzado</strong>
+                            <ul>
+                                <li><strong>native2ascii</strong>: Convierte caracteres Unicode</li>
+                                <li><strong>keytool</strong>: Manejo de certificados SSL</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </section>
 
                 <section id="fundamentos" class="content-section">
-                    <h2>Fundamentos de programación</h2>
-                    <p>Los fundamentos de la programación consisten en el primer grupo de conceptos que tiene que entender un desarrollador. La lógica de programación siempre es la misma, lo que cambia es la sintaxis del lenguaje</p>
+                    <div class="fundamentos-grid">
+                        <div class="fundamentos-texto">
+                            <h2>Fundamentos de programación</h2>
+                            <p>Los fundamentos de la programación consisten en el primer grupo de conceptos que tiene que entender un desarrollador. La lógica de programación siempre es la misma, lo que cambia es la sintaxis del lenguaje.</p>
+                        
+                            <h3 class="subsection-title">El Ciclo de Vida de un Programa</h3>
+                            <div class="columns-container">
+                                <div class="column">
+                                    <h4>1. Entrada (Input)</h4>
+                                    <p>Son los datos que tu programa necesita para trabajar. Puede ser texto escrito por un usuario, información de una base de datos o un clic del ratón.</p>
+                                </div>
+                                <div class="column">
+                                    <h4>2. Procesamiento (Processing)</h4>
+                                    <p>Aquí ocurre la magia. Es el conjunto de instrucciones (el algoritmo) que toma la entrada, la manipula, hace cálculos y toma decisiones.</p>
+                                </div>
+                                <div class="column">
+                                    <h4>3. Salida (Output)</h4>
+                                    <p>Es el resultado que el programa devuelve después del procesamiento. Puede ser un mensaje en pantalla, un archivo guardado o una acción realizada.</p>
+                                </div>
+                            </div>
+                        
+                            <h3 class="subsection-title">Tu Primer Contacto: "Hola, Mundo"</h3>
+                            <p>La tradición de todo programador es empezar con un programa "Hola, Mundo". Su objetivo no es ser complejo, sino verificar que tu entorno de desarrollo está bien configurado y entiendes la estructura básica para ejecutar código.</p>
+                            <div class="code-terminal">
+                                <div class="code-terminal-header">HolaMundo.java</div>
+                                <pre><code class="language-java">
+                // Mi primer programa en Java
+                public class HolaMundo {
+                    public static void main(String[] args) {
+                        // Esta línea imprime el texto en la consola.
+                        System.out.println("¡Hola, Mundo desde Java!");
+                    }
+                }
+                                </code></pre>
+                            </div>
+                            <div class="explicacion-codigo">
+                                <h4>¿Qué hace este código?</h4>
+                                <p>
+                                    Este pequeño programa en Java muestra el mensaje <strong>"¡Hola, Mundo desde Java!"</strong> en la pantalla. Es el primer paso de muchos programadores porque ayuda a comprobar que todo está funcionando bien.<br><br>
+                                    ¿Cómo funciona? Imagina que el programa es como un mensajero: cuando lo ejecutas, va directo a la consola y deja el mensaje para ti. No necesitas entender palabras complicadas, solo saber que este código le dice a la computadora: "¡Escribe esto en la pantalla!".<br><br>
+                                    Así, puedes ver que tu entorno de Java está listo y que puedes empezar a crear tus propios programas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="fundamentos-cuadros">
+                            <div class="cuadro condiciones">Condiciones</div>
+                            <div class="cuadro bucles">Bucles</div>
+                            <div class="cuadro tipos-datos">Tipos de datos</div>
+                            <div class="cuadro operadores">Operadores</div>
+                        </div>
+                    </div>
                 </section>
                 
                 <section id="tipos-de-datos" class="content-section">
                     <h2>Tipos de Datos</h2>
-                    <p>En los fundamentos de programación tenemos tipos de datos primitivos y no primitivos. Los datos primitivos en Java almacenan un valor directamente en la memoria Stack, son eficientes y no contienen métodos ni atributos.</p>
+                    <p>En los fundamentos de programación tenemos tipos de datos primitivos junto a sus wrappers y los no primitivos, los tipos de datos son una categorización de los valores que puede almacenar una variable y las operaciones que se pueden hacer con ese tipo de dato.</p>
+                    <h3>Datos primitivos:</h3>
+                    <ul>
+                        <li>Los datos primitivos en Java son los que almacenan un valor en memoria, están almacenados en el <strong>Stack</strong> (memoria rápida para datos efímeros).</li>
+                        <li>No pertenecen a un objeto.</li>
+                        <li>No contienen métodos ni atributos.</li>
+                        <li>Son medibles (por ejemplo: 0, 0.0, false).</li>
+                    </ul>
+                    <h3>Características Clave de los Tipos Primitivos</h3>
+                    <ul>
+                        <li><strong>Almacenamiento en Stack:</strong> Ocupan memoria fija y directa, lo que los hace más rápidos que los objetos.</li>
+                        <li><strong>Inmutabilidad:</strong> Su valor no puede modificarse sin reasignación (ejemplo: <code>int x = 5; x = 10;</code>).</li>
+                        <li><strong>Eficiencia:</strong> Ideales para operaciones matemáticas intensivas por su bajo overhead.</li>
+                        <li><strong>Valores por Defecto:</strong> Si no se inicializan, Java les asigna un valor predeterminado (ejemplo: 0, 0.0, false).</li>
+                        <li><strong>Clases Wrapper:</strong> Cada tipo primitivo tiene una clase equivalente (ejemplo: <code>int</code> - <code>Integer</code>) para usos en colecciones o APIs que requieren objeto.</li>
+                    </ul>
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>TIPO</th>
+                          <th>TAMAÑO (BITS)</th>
+                          <th>VALOR MÍNIMO</th>
+                          <th>VALOR MÁXIMO</th>
+                          <th>EJEMPLO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>byte</td>
+                          <td>8</td>
+                          <td>-128</td>
+                          <td>127</td>
+                          <td><code>byte edad = 30;</code></td>
+                        </tr>
+                        <tr>
+                          <td>short</td>
+                          <td>16</td>
+                          <td>-32,768</td>
+                          <td>32,767</td>
+                          <td><code>short distancia = 2000;</code></td>
+                        </tr>
+                        <tr>
+                          <td>int</td>
+                          <td>32</td>
+                          <td>-2,147,483,648</td>
+                          <td>2,147,483,647</td>
+                          <td><code>int cantidad = 100000;</code></td>
+                        </tr>
+                        <tr>
+                          <td>long</td>
+                          <td>64</td>
+                          <td>-9,223...808L</td>
+                          <td>9,223...807L</td>
+                          <td><code>long estrellas = 9223372036854775807L;</code></td>
+                        </tr>
+                        <tr>
+                          <td>float</td>
+                          <td>32</td>
+                          <td>≈ 1.4 x 10<sup>-45</sup></td>
+                          <td>≈ 3.4 x 10<sup>38</sup></td>
+                          <td><code>float precio = 19.99f;</code></td>
+                        </tr>
+                        <tr>
+                          <td>double</td>
+                          <td>64</td>
+                          <td>≈ 4.9 x 10<sup>-324</sup></td>
+                          <td>≈ 1.8 x 10<sup>308</sup></td>
+                          <td><code>double pi = 3.1415926535;</code></td>
+                        </tr>
+                        <tr>
+                          <td>char</td>
+                          <td>16</td>
+                          <td>'\u0000' (0)</td>
+                          <td>'\uffff' (65,535)</td>
+                          <td><code>char letra = 'A';</code></td>
+                        </tr>
+                        <tr>
+                          <td>boolean</td>
+                          <td>1</td>
+                          <td>false</td>
+                          <td>true</td>
+                          <td><code>boolean activo = true;</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </section>
 
                 <section id="variables" class="content-section">

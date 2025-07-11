@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- LÓGICA PARA EL INTERRUPTOR DE TEMA (MODO OSCURO) ---
-    const themeToggle = document.getElementById('theme-toggle');
+    const toggle = document.getElementById('theme-toggle');
 
     // Función para aplicar el tema
     const applyTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        themeToggle.checked = theme === 'dark';
+        toggle.checked = theme === 'dark';
     };
 
     // Cargar el tema guardado al iniciar
@@ -35,9 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme(savedTheme);
 
     // Escuchar cambios en el interruptor
-    themeToggle.addEventListener('change', () => {
-        const newTheme = themeToggle.checked ? 'dark' : 'light';
-        applyTheme(newTheme);
+    toggle.addEventListener('change', function() {
+      if (toggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
     });
     
 });
