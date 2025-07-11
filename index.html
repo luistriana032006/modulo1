@@ -296,30 +296,50 @@
                         </tr>
                       </tbody>
                     </table>
-                    <h3>Datos no primitivos (referenciados)</h3>
-                    <p>
-                        Son objetos (instancias que pertenecen a una clase) por lo que almacenan una referencia (dirección de memoria) al dato real que está en el heap (región grande y dinámica de memoria).
-                    </p>
-                    <h4>Características:</h4>
-                    <ul>
-                        <li>Son objetos (instancias que pertenecen a una clase).</li>
-                        <li>Pueden ser <code>null</code>.</li>
-                        <li>Tienen métodos y atributos.</li>
-                        <li>Ocupan más memoria.</li>
-                        <li>Requieren más tiempo de procesamiento.</li>
-                    </ul>
-                    <h4>¿Para qué se usan?</h4>
-                    <ul>
-                        <li>Manipular cadenas de textos.</li>
-                        <li>Almacenar colecciones de datos (Arrays, listas, mapas).</li>
-                        <li>Crear estructuras complejas (objetos con atributos y métodos).</li>
-                        <li>Trabajar con APIs y librerías (casi todas usan objetos).</li>
-                    </ul>
+                    <h3 class="subsection-title">Datos No Primitivos (de Referencia)</h3>
+                    <p>Estos tipos de datos almacenan una referencia (o dirección) a un objeto en la memoria. Pueden tener métodos y su valor puede ser nulo.</p>
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Tipo</th>
+                          <th>Ejemplo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>String</td>
+                          <td><code>String s = "hola";</code></td>
+                        </tr>
+                        <tr>
+                          <td>Arrays</td>
+                          <td><code>int[] arr = {1, 2, 3};</code></td>
+                        </tr>
+                        <tr>
+                          <td>Clases</td>
+                          <td><code>Persona p = new Persona();</code></td>
+                        </tr>
+                        <tr>
+                          <td>Interfaces</td>
+                          <td><code>List&lt;String&gt; lista = new ArrayList&lt;&gt;();</code></td>
+                        </tr>
+                        <tr>
+                          <td>Wrappers</td>
+                          <td><code>Integer num = 10;</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </section>
 
                 <section id="variables" class="content-section">
                     <h2>Variables y Palabras Reservadas</h2>
-                    <p>En programación, una variable es un espacio en memoria que contiene un único dato. Por otro lado, una palabra reservada es un término especial definido por el lenguaje que no puede ser usado como nombre de variable.</p>
+                    <p>Una variable matemáticamente es la asignación de un carácter a un valor numérico perteneciente a un conjunto matemático. En programación una variable es un espacio en memoria el cual contiene un único dato (la cantidad de variables que puede almacenar una máquina depende de sus especificaciones de hardware como la RAM). Con ese dato asignado a la variable se pueden hacer múltiples operaciones según la lógica programada.</p>
+                    <h3>¿Qué es una palabra reservada?</h3>
+                    <p>Una palabra reservada o una keyword es un término especial definido por el lenguaje que tiene un significado específico y no puede ser usado como identificador (nombre de variable, método, clase, etc.).</p>
+                    <div class="nota-importante">
+                        <strong>Nota importante</strong><br>
+                        Las palabras reservadas están en minúsculas y son case-sensitive.<br>
+                        Algunas palabras como true, false y null no son keywords, sino literales reservados, pero tampoco pueden usarse como identificadores.
+                    </div>
                 </section>
 
                 <section id="operadores" class="content-section">

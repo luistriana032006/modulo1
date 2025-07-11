@@ -367,3 +367,21 @@ code[class*="language-"] * {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.nota-importante {
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 2.5rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0 0 0;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+  max-width: 900px;
+}
+.nota-importante strong {
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
