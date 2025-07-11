@@ -607,11 +607,8 @@ code[class*="language-"] * {
 }
 
 @media (max-width: 900px) {
-  .sidebar {
-    display: none;
-  }
   .mobile-menu-btn {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -619,7 +616,7 @@ code[class*="language-"] * {
     height: 40px;
     margin: 0.5rem 0 0 0.5rem;
     cursor: pointer;
-    z-index: 100;
+    z-index: 300;
   }
   .mobile-menu-btn span {
     display: block;
@@ -629,6 +626,42 @@ code[class*="language-"] * {
     background: var(--accent-color);
     border-radius: 2px;
     transition: all 0.3s;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw;
+    max-width: 320px;
+    background: var(--sidebar-bg);
+    z-index: 200;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(-100%) !important;
+    opacity: 0 !important;
+  }
+  .sidebar.active {
+    display: block !important;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+  .sidebar-backdrop {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.35);
+    z-index: 150;
+  }
+  .sidebar-backdrop.active {
+    display: block !important;
   }
 }
 
@@ -981,13 +1014,13 @@ code[class*="language-"] * {
     z-index: 200;
     box-shadow: 2px 0 16px rgba(0,0,0,0.18);
     transition: transform 0.3s, opacity 0.3s;
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(-100%) !important;
+    opacity: 0 !important;
   }
   .sidebar.active {
     display: block;
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
   }
   .sidebar-backdrop {
     display: none;
@@ -1001,6 +1034,13 @@ code[class*="language-"] * {
   }
   .sidebar.active ~ .sidebar-backdrop {
     display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar-header h2 {
+    margin-left: 48px;
+    transition: margin 0.2s;
   }
 }
 

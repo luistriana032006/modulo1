@@ -147,11 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeSidebar() {
         sidebar.classList.remove('active');
-        if (sidebarBackdrop) sidebarBackdrop.style.display = 'none';
+        if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
     }
     function openSidebar() {
         sidebar.classList.add('active');
-        if (sidebarBackdrop) sidebarBackdrop.style.display = 'block';
+        if (sidebarBackdrop) sidebarBackdrop.classList.add('active');
     }
     if (mobileMenuBtn && sidebar && sidebarBackdrop) {
         mobileMenuBtn.addEventListener('click', () => {
