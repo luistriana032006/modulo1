@@ -775,6 +775,7 @@ code[class*="language-"] * {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  margin-left: 4rem;
 }
 .operator-explanation {
   width: 100%;
@@ -796,6 +797,13 @@ code[class*="language-"] * {
   }
   .operadores-codigo-col {
     margin-bottom: 1.5rem;
+  }
+  .operator-explanation-col {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    margin-left: 0;
   }
 }
 
