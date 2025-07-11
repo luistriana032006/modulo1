@@ -385,3 +385,70 @@ code[class*="language-"] * {
   margin-bottom: 0.5rem;
 }
 
+
+/* --- Estilos para el Mapa Conceptual --- */
+
+.mind-map-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 2rem 3rem; /* Espacio vertical y horizontal */
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.mind-map-center {
+  grid-column: 2; /* Posición en la cuadrícula */
+  grid-row: 2;
+  text-align: center;
+  color: var(--accent-color);
+  align-self: center;
+}
+
+.mind-map-center h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mind-map-card {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.mind-map-card h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mind-map-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.mind-map-card li {
+  margin-bottom: 0.25rem;
+}
+
+.mind-map-card em {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* --- Posicionamiento específico de cada tarjeta en la cuadrícula --- */
+.contexto-especial     { grid-column: 1; grid-row: 1; }
+.control-flujo         { grid-column: 2; grid-row: 1; }
+.manejo-excepciones    { grid-column: 3; grid-row: 1; }
+.modificadores-claves  { grid-column: 1; grid-row: 2; }
+.modificadores-acceso  { grid-column: 3; grid-row: 2; }
+.control-hilos         { grid-column: 1; grid-row: 3; }
+.objetos-clases        { grid-column: 2; grid-row: 3; }
+.datos-primitivos      { grid-column: 3; grid-row: 3; }
+
