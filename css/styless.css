@@ -584,3 +584,34 @@ code[class*="language-"] * {
   }
 }
 
+/* Botón menú hamburguesa oculto por defecto */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem 0 0 0.5rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .mobile-menu-btn span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+}
+
