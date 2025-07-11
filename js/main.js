@@ -64,4 +64,80 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // --- LÓGICA PARA LOS OPERADORES DE ASIGNACIÓN COMPUESTA INTERACTIVOS ---
+    const operatorLinksAssign = document.querySelectorAll('.operator-link-assign');
+    const explanationCardsAssign = document.querySelectorAll('.asignacion-compuesta-ejemplos .explanation-card');
+
+    operatorLinksAssign.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            // Quitar clase activa de todos los enlaces y tarjetas
+            operatorLinksAssign.forEach(item => item.classList.remove('active'));
+            explanationCardsAssign.forEach(card => card.classList.remove('active'));
+
+            // Añadir clase activa al enlace y tarjeta correctos
+            link.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+    
+    // --- LÓGICA PARA LOS OPERADORES DE INCREMENTO Y DECREMENTO INTERACTIVOS ---
+    const operatorLinksIncDec = document.querySelectorAll('.operator-link-incdec');
+    const explanationCardsIncDec = document.querySelectorAll('.incremento-decremento-ejemplos .explanation-card');
+
+    operatorLinksIncDec.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            // Quitar clase activa de todos los enlaces y tarjetas
+            operatorLinksIncDec.forEach(item => item.classList.remove('active'));
+            explanationCardsIncDec.forEach(card => card.classList.remove('active'));
+
+            // Añadir clase activa al enlace y tarjeta correctos
+            link.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+    
+    // --- LÓGICA PARA LOS OPERADORES RELACIONALES INTERACTIVOS ---
+    const operatorLinksRel = document.querySelectorAll('.operator-link-rel');
+    const explanationCardsRel = document.querySelectorAll('.relacionales-ejemplos .explanation-card');
+
+    operatorLinksRel.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            // Quitar clase activa de todos los enlaces y tarjetas
+            operatorLinksRel.forEach(item => item.classList.remove('active'));
+            explanationCardsRel.forEach(card => card.classList.remove('active'));
+
+            // Añadir clase activa al enlace y tarjeta correctos
+            link.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+    
+    // --- LÓGICA PARA LOS OPERADORES LÓGICOS BOOLEANOS INTERACTIVOS ---
+    const operatorLinksLog = document.querySelectorAll('.operator-link-log');
+    const explanationCardsLog = document.querySelectorAll('.logicos-ejemplos .explanation-card');
+
+    operatorLinksLog.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            // Quitar clase activa de todos los enlaces y tarjetas
+            operatorLinksLog.forEach(item => item.classList.remove('active'));
+            explanationCardsLog.forEach(card => card.classList.remove('active'));
+
+            // Añadir clase activa al enlace y tarjeta correctos
+            link.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+    
 });

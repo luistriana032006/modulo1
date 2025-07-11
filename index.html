@@ -564,6 +564,145 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                         </div>
                       </div>
                     </div>
+                    <div class="incremento-decremento-section">
+                      <h3 class="incremento-decremento-title">Operadores de incremento y decremento</h3>
+                      <p class="incremento-decremento-desc">
+                        los operadores de incremento y decremento solo suman (incremento) y restan (decremento) en una (1) unidad
+                      </p>
+                      <div class="operadores-lista-horizontal incremento-decremento-lista">
+                        <div class="operador-card operator-link-incdec active" data-target="ejemplo-inc"><span class="variable-highlight">++</span> <span>incremento</span></div>
+                        <div class="operador-card operator-link-incdec" data-target="ejemplo-dec"><span class="variable-highlight">--</span> <span>decremento</span></div>
+                      </div>
+                      <div class="operadores-ejemplos-interactivos incremento-decremento-ejemplos">
+                        <div class="explanation-card active" id="ejemplo-inc">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">++ (incremento)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
+<span class="variable-highlight">x</span>++;
+// x ahora vale 8
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-dec">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">-- (decremento)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
+<span class="variable-highlight">x</span>--;
+// x ahora vale 6
+</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="relacionales-section">
+  <h3 class="relacionales-title">Operadores relacionales o condicionales.</h3>
+  <p class="relacionales-desc">
+    Los operadores relacionales (también llamados operadores de comparación) son símbolos que comparan dos valores y devuelven un resultado booleano (true o false). Se utilizan principalmente en estructuras condicionales (if, while, for) para tomar decisiones basadas en la relación entre variables o expresiones.
+  </p>
+  <div class="operadores-lista-horizontal relacionales-lista">
+    <div class="operador-card operator-link-rel active" data-target="ejemplo-igual"><span class="variable-highlight">==</span> <span>igual a</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-diferente"><span class="variable-highlight">!=</span> <span>diferente de</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-mayor"><span class="variable-highlight">&gt;</span> <span>mayor que</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-menor"><span class="variable-highlight">&lt;</span> <span>menor que</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-mayor-igual"><span class="variable-highlight">&gt;=</span> <span>mayor o igual</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-menor-igual"><span class="variable-highlight">&lt;=</span> <span>menor o igual</span></div>
+  </div>
+  <div class="operadores-ejemplos-interactivos relacionales-ejemplos">
+    <div class="explanation-card active" id="ejemplo-igual">
+      <div class="code-terminal">
+        <div class="code-terminal-header">== (igual a)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
+int <span class="variable-highlight">b</span> = 5;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> == <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-diferente">
+      <div class="code-terminal">
+        <div class="code-terminal-header">!= (diferente de)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
+int <span class="variable-highlight">b</span> = 3;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> != <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-mayor">
+      <div class="code-terminal">
+        <div class="code-terminal-header">&gt; (mayor que)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 4;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &gt; <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-menor">
+      <div class="code-terminal">
+        <div class="code-terminal-header">&lt; (menor que)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 2;
+int <span class="variable-highlight">b</span> = 8;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &lt; <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-mayor-igual">
+      <div class="code-terminal">
+        <div class="code-terminal-header">&gt;= (mayor o igual)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 6;
+int <span class="variable-highlight">b</span> = 6;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &gt;= <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-menor-igual">
+      <div class="code-terminal">
+        <div class="code-terminal-header">&lt;= (menor o igual)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 3;
+int <span class="variable-highlight">b</span> = 7;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &lt;= <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="logicos-section">
+  <h3 class="logicos-title">operadores lógicos booleanos.</h3>
+  <p class="logicos-desc">
+    Los operadores lógicos booleanos son símbolos que permiten combinar o modificar expresiones condicionales (que evalúan a true o false) para construir lógicas más complejas. Se utilizan principalmente en estructuras de control como if, while o for para tomar decisiones basadas en múltiples condiciones.
+  </p>
+  <div class="operadores-lista-horizontal logicos-lista">
+    <div class="operador-card operator-link-log active" data-target="ejemplo-and"><span class="variable-highlight">&&</span> <span>AND (y)</span></div>
+    <div class="operador-card operator-link-log" data-target="ejemplo-or"><span class="variable-highlight">||</span> <span>OR (o)</span></div>
+    <div class="operador-card operator-link-log" data-target="ejemplo-not"><span class="variable-highlight">!</span> <span>NOT (no)</span></div>
+  </div>
+  <div class="operadores-ejemplos-interactivos logicos-ejemplos">
+    <div class="explanation-card active" id="ejemplo-and">
+      <div class="code-terminal">
+        <div class="code-terminal-header">&& (AND)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
+boolean <span class="variable-highlight">b</span> = false;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> && <span class="variable-highlight">b</span>; // false
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-or">
+      <div class="code-terminal">
+        <div class="code-terminal-header">|| (OR)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
+boolean <span class="variable-highlight">b</span> = false;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> || <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-not">
+      <div class="code-terminal">
+        <div class="code-terminal-header">! (NOT)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = false;
+boolean <span class="variable-highlight">resultado</span> = !<span class="variable-highlight">a</span>; // true
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
                 </section>
                 
                 <section id="condicionales" class="content-section">
