@@ -45,4 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
+    // --- LÓGICA PARA LOS OPERADORES INTERACTIVOS ---
+    const operatorLinks = document.querySelectorAll('.operator-link');
+    const explanationCards = document.querySelectorAll('.explanation-card');
+
+    operatorLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+
+            // Quitar clase activa de todos los enlaces y tarjetas
+            operatorLinks.forEach(item => item.classList.remove('active'));
+            explanationCards.forEach(card => card.classList.remove('active'));
+
+            // Añadir clase activa al enlace y tarjeta correctos
+            link.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+    
 });

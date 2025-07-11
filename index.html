@@ -354,81 +354,170 @@
                         Algunas palabras como true, false y null no son keywords, sino literales reservados, pero tampoco pueden usarse como identificadores.
                     </div>
                     <h3 class="subsection-title">Mapa de Palabras Reservadas</h3>
-                    <div class="mind-map-container">
-                      <div class="mind-map-center">
-                        <h4>PALABRAS<br>RESERVADAS</h4>
-                      </div>
-                      <div class="mind-map-card contexto-especial">
-                        <h5>CONTEXTO ESPECIAL</h5>
-                        <ul>
-                          <li>var (inferencia de tipos)</li>
-                          <li><em>(uso restringido)</em></li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card control-flujo">
-                        <h5>CONTROL DE FLUJO</h5>
-                        <ul>
-                          <li>if - else</li>
-                          <li>switch - case</li>
-                          <li>for - while - do</li>
-                          <li>break - continue</li>
-                          <li>return</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card manejo-excepciones">
-                        <h5>MANEJO DE EXCEPCIONES</h5>
-                        <ul>
-                          <li>try - catch - finally</li>
-                          <li>throw - throws</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card modificadores-claves">
-                        <h5>MODIFICADORES Y PALABRAS CLAVES</h5>
-                        <ul>
-                          <li>void</li>
-                          <li>package - import</li>
-                          <li>native, transient</li>
-                          <li>assert</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card modificadores-acceso">
-                        <h5>MODIFICADORES DE ACCESO</h5>
-                        <ul>
-                          <li>public - private</li>
-                          <li>protected</li>
-                          <li>static - final - abstract</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card control-hilos">
-                        <h5>CONTROL DE HILOS</h5>
-                        <ul>
-                          <li>synchronized</li>
-                          <li>volatile</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card objetos-clases">
-                        <h5>OBJETOS Y CLASES</h5>
-                        <ul>
-                          <li>class - interface - enum</li>
-                          <li>extends - implements</li>
-                          <li>new - this - super</li>
-                          <li>instanceof</li>
-                        </ul>
-                      </div>
-                      <div class="mind-map-card datos-primitivos">
-                        <h5>DATOS PRIMITIVOS</h5>
-                        <ul>
-                          <li>byte - short - int - long</li>
-                          <li>float - double</li>
-                          <li>char - boolean</li>
-                        </ul>
+                    <div class="mind-map-svg-wrapper">
+                      <svg class="mind-map-lines" viewBox="0 0 900 400" width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true">
+                        <!-- Líneas horizontales -->
+                        <line x1="150" y1="200" x2="450" y2="200" />
+                        <line x1="750" y1="200" x2="450" y2="200" />
+                        <!-- Líneas verticales -->
+                        <line x1="450" y1="60" x2="450" y2="200" />
+                        <line x1="450" y1="340" x2="450" y2="200" />
+                        <!-- Líneas diagonales -->
+                        <line x1="220" y1="100" x2="450" y2="200" />
+                        <line x1="680" y1="100" x2="450" y2="200" />
+                        <line x1="220" y1="300" x2="450" y2="200" />
+                        <line x1="680" y1="300" x2="450" y2="200" />
+                      </svg>
+                      <div class="mind-map-container">
+                        <div class="mind-map-center">
+                          <h4>PALABRAS<br>RESERVADAS</h4>
+                        </div>
+                        <div class="mind-map-card contexto-especial">
+                          <h5>CONTEXTO ESPECIAL</h5>
+                          <ul>
+                            <li>var (inferencia de tipos)</li>
+                            <li><em>(uso restringido)</em></li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card control-flujo">
+                          <h5>CONTROL DE FLUJO</h5>
+                          <ul>
+                            <li>if - else</li>
+                            <li>switch - case</li>
+                            <li>for - while - do</li>
+                            <li>break - continue</li>
+                            <li>return</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card manejo-excepciones">
+                          <h5>MANEJO DE EXCEPCIONES</h5>
+                          <ul>
+                            <li>try - catch - finally</li>
+                            <li>throw - throws</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card modificadores-claves">
+                          <h5>MODIFICADORES Y PALABRAS CLAVES</h5>
+                          <ul>
+                            <li>void</li>
+                            <li>package - import</li>
+                            <li>native, transient</li>
+                            <li>assert</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card modificadores-acceso">
+                          <h5>MODIFICADORES DE ACCESO</h5>
+                          <ul>
+                            <li>public - private</li>
+                            <li>protected</li>
+                            <li>static - final - abstract</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card control-hilos">
+                          <h5>CONTROL DE HILOS</h5>
+                          <ul>
+                            <li>synchronized</li>
+                            <li>volatile</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card objetos-clases">
+                          <h5>OBJETOS Y CLASES</h5>
+                          <ul>
+                            <li>class - interface - enum</li>
+                            <li>extends - implements</li>
+                            <li>new - this - super</li>
+                            <li>instanceof</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card datos-primitivos">
+                          <h5>DATOS PRIMITIVOS</h5>
+                          <ul>
+                            <li>byte - short - int - long</li>
+                            <li>float - double</li>
+                            <li>char - boolean</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                 </section>
 
                 <section id="operadores" class="content-section">
-                    <h2>Operadores</h2>
-                    <p>En Java, una expresión es una combinación de variables, operadores y literales que, al ser evaluada, produce un valor. Existen operadores aritméticos, relacionales, lógicos, entre otros.</p>
+                    <h2>Expresiones</h2>
+                    <h3>Operadores aritméticos</h3>
+                    <p>Los operadores aritméticos en Java permiten realizar operaciones matemáticas básicas entre variables o valores. Son fundamentales para cualquier cálculo y se utilizan en expresiones para sumar, restar, multiplicar, dividir o calcular el resto de una división.</p>
+                    <div class="operadores-layout">
+                        <div class="operadores-col operadores-list-col">
+                            <table class="operadores-table">
+                                <tbody>
+                                    <tr><td><strong>suma (+)</strong></td></tr>
+                                    <tr><td><strong>resta (-)</strong></td></tr>
+                                    <tr><td><strong>multiplicación (*)</strong></td></tr>
+                                    <tr><td><strong>división (/)</strong></td></tr>
+                                    <tr><td><strong>módulo (%)</strong></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="operadores-ejemplo-uso">
+                                <span>ejemplo de uso</span>
+                            </div>
+                        </div>
+                        <div class="operadores-codigo-col">
+                            <div class="operator-list">
+                                <a href="#" class="operator-link active" data-target="info-suma">suma (+)</a>
+                                <a href="#" class="operator-link" data-target="info-resta">resta (-)</a>
+                                <a href="#" class="operator-link" data-target="info-multiplicacion">multiplicación (*)</a>
+                                <a href="#" class="operator-link" data-target="info-division">división (/)</a>
+                                <a href="#" class="operator-link" data-target="info-modulo">módulo (%)</a>
+                            </div>
+                            <div class="operator-explanation">
+                                <div id="info-suma" class="explanation-card active">
+                                    <h4>Operador de Suma <code>+</code></h4>
+                                    <p>Se utiliza para sumar dos valores numéricos. Si se usa con cadenas de texto (Strings), las concatena (une).</p>
+                                    <pre><code class="language-java">int resultado = 10 + 5; // resultado es 15</code></pre>
+                                </div>
+                                <div id="info-resta" class="explanation-card">
+                                    <h4>Operador de Resta <code>-</code></h4>
+                                    <p>Resta el segundo valor del primero. Solo funciona con números.</p>
+                                    <pre><code class="language-java">int resultado = 10 - 5; // resultado es 5</code></pre>
+                                </div>
+                                <div id="info-multiplicacion" class="explanation-card">
+                                    <h4>Operador de Multiplicación <code>*</code></h4>
+                                    <p>Multiplica dos valores numéricos.</p>
+                                    <pre><code class="language-java">int resultado = 10 * 5; // resultado es 50</code></pre>
+                                </div>
+                                <div id="info-division" class="explanation-card">
+                                    <h4>Operador de División <code>/</code></h4>
+                                    <p>Divide el primer valor por el segundo. Si ambos son enteros, el resultado será un entero (sin decimales).</p>
+                                    <pre><code class="language-java">int resultado = 10 / 4; // resultado es 2</code></pre>
+                                </div>
+                                <div id="info-modulo" class="explanation-card">
+                                    <h4>Operador de Módulo <code>%</code></h4>
+                                    <p>Devuelve el resto de una división entera. Es muy útil para saber si un número es par o impar.</p>
+                                    <pre><code class="language-java">int resultado = 10 % 3; // resultado es 1</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="operator-explanation-col">
+                            <div class="code-terminal">
+                                <div class="code-terminal-header">OperadoresAritmeticos.java</div>
+                                <pre><code class="codigo-ejemplo">// Ejemplo de operadores aritméticos en Java
+int <span class="var">a</span> = 10;
+int <span class="var">b</span> = 3;
+
+int <span class="var">suma</span> = <span class="var">a</span> + <span class="var">b</span>;        // suma: 13
+int <span class="var">resta</span> = <span class="var">a</span> - <span class="var">b</span>;       // resta: 7
+int <span class="var">multiplicacion</span> = <span class="var">a</span> * <span class="var">b</span>; // multiplicación: 30
+int <span class="var">division</span> = <span class="var">a</span> / <span class="var">b</span>;    // división: 3 (división entera)
+int <span class="var">modulo</span> = <span class="var">a</span> % <span class="var">b</span>;      // módulo: 1 (resto de la división)
+
+System.out.println("Suma: " + <span class="var">suma</span>);
+System.out.println("Resta: " + <span class="var">resta</span>);
+System.out.println("Multiplicación: " + <span class="var">multiplicacion</span>);
+System.out.println("División: " + <span class="var">division</span>);
+System.out.println("Módulo: " + <span class="var">modulo</span>);
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 
                 <section id="condicionales" class="content-section">
