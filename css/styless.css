@@ -7,6 +7,9 @@
   --accent-color: #6a1b9a;
   --link-active-bg: #f3e5f5;
   --shadow-color: rgba(0, 0, 0, 0.05);
+
+  --code-header-bg: #e0e0e0;
+  --code-header-text: #555;
 }
 
 [data-theme="dark"] {
@@ -18,6 +21,9 @@
   --accent-color: #bb86fc;
   --link-active-bg: #3a3a3a;
   --shadow-color: rgba(0, 0, 0, 0.2);
+
+  --code-header-bg: #1a1d23; /* Un negro sutil */
+  --code-header-text: #bdbdbd; /* Un gris claro para el texto */
 }
 
 * {
@@ -292,24 +298,42 @@ input:checked + .slider:before {
 }
 
 /* Bloque de código tipo terminal (solo estilos base, sin modo oscuro personalizado) */
+
+/* --- Bloque de código estilo Carbon --- */
 .code-terminal {
   margin: 2rem 0 1.5rem 0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más notoria */
   background: #23272e;
-  border: 1.5px solid #23272e;
   max-width: 600px;
 }
 
 .code-terminal-header {
-  background: #1a1d23;
-  color: #bdbdbd;
-  font-size: 0.95rem;
-  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  padding: 0.5rem 1.2rem;
-  border-bottom: 1px solid #23272e;
-  letter-spacing: 0.5px;
+  background: var(--code-header-bg); /* Usa la variable de fondo */
+  color: var(--code-header-text);    /* Usa la variable de texto */
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  padding: 0.75rem 1.2rem;
+  border-bottom: 1px solid var(--shadow-color); /* También usamos una variable aquí */
+  position: relative;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Añade una transición suave */
+}
+
+/* --- La magia para añadir los círculos de colores --- */
+.code-terminal-header::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 12px;
+  /* Dibuja 3 círculos usando gradientes radiales */
+  background-image: radial-gradient(circle at 6px 6px, #ff5f56 6px, transparent 6px),
+                    radial-gradient(circle at 26px 6px, #ffbd2e 6px, transparent 6px),
+                    radial-gradient(circle at 46px 6px, #27c93f 6px, transparent 6px);
 }
 
 .code-terminal pre[class*="language-"] {
@@ -322,12 +346,12 @@ input:checked + .slider:before {
   overflow-x: auto;
 }
 
+/* --- Sobreescribe estilos de Prism para que se vea limpio --- */
 pre[class*="language-"], 
 code[class*="language-"], 
 pre[class*="language-"] *, 
 code[class*="language-"] * {
   text-shadow: none !important;
-  filter: none !important;
 }
 
 /* --- Estilos para la Tabla de Datos --- */
