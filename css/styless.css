@@ -967,3 +967,40 @@ code[class*="language-"] * {
   margin-top: 0.5rem;
 }
 
+/* --- Sidebar móvil --- */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw;
+    max-width: 320px;
+    background: var(--sidebar-bg);
+    z-index: 200;
+    box-shadow: 2px 0 16px rgba(0,0,0,0.18);
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .sidebar.active {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.35);
+    z-index: 150;
+  }
+  .sidebar.active ~ .sidebar-backdrop {
+    display: block;
+  }
+}
+

@@ -140,4 +140,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // --- LÓGICA PARA EL MENÚ HAMBURGUESA (MÓVIL) ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarBackdrop = document.querySelector('.sidebar-backdrop');
+
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        if (sidebarBackdrop) sidebarBackdrop.style.display = 'none';
+    }
+    function openSidebar() {
+        sidebar.classList.add('active');
+        if (sidebarBackdrop) sidebarBackdrop.style.display = 'block';
+    }
+    if (mobileMenuBtn && sidebar && sidebarBackdrop) {
+        mobileMenuBtn.addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        sidebarBackdrop.addEventListener('click', closeSidebar);
+    }
+    // Cierra el menú al seleccionar un tema
+    topicLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 900) {
+                closeSidebar();
+            }
+        });
+    });
+    
 });
