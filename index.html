@@ -30,7 +30,7 @@
         </nav>
 
         <div class="main-content">
-            <div class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" tabindex="0">
+            <div class="mobile-menu-btn"po id="mobileMenuBtn" aria-label="Abrir menú" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -445,78 +445,124 @@
                     <h2>Expresiones</h2>
                     <h3>Operadores aritméticos</h3>
                     <p>Los operadores aritméticos en Java permiten realizar operaciones matemáticas básicas entre variables o valores. Son fundamentales para cualquier cálculo y se utilizan en expresiones para sumar, restar, multiplicar, dividir o calcular el resto de una división.</p>
-                    <div class="operadores-layout">
-                        <div class="operadores-col operadores-list-col">
-                            <table class="operadores-table">
-                                <tbody>
-                                    <tr><td><strong>suma (+)</strong></td></tr>
-                                    <tr><td><strong>resta (-)</strong></td></tr>
-                                    <tr><td><strong>multiplicación (*)</strong></td></tr>
-                                    <tr><td><strong>división (/)</strong></td></tr>
-                                    <tr><td><strong>módulo (%)</strong></td></tr>
-                                </tbody>
-                            </table>
-                            <div class="operadores-ejemplo-uso">
-                                <span>ejemplo de uso</span>
-                            </div>
-                        </div>
-                        <div class="operadores-codigo-col">
-                            <div class="operator-list">
-                                <a href="#" class="operator-link active" data-target="info-suma">suma (+)</a>
-                                <a href="#" class="operator-link" data-target="info-resta">resta (-)</a>
-                                <a href="#" class="operator-link" data-target="info-multiplicacion">multiplicación (*)</a>
-                                <a href="#" class="operator-link" data-target="info-division">división (/)</a>
-                                <a href="#" class="operator-link" data-target="info-modulo">módulo (%)</a>
-                            </div>
-                            <div class="operator-explanation">
-                                <div id="info-suma" class="explanation-card active">
-                                    <h4>Operador de Suma <code>+</code></h4>
-                                    <p>Se utiliza para sumar dos valores numéricos. Si se usa con cadenas de texto (Strings), las concatena (une).</p>
-                                    <pre><code class="language-java">int resultado = 10 + 5; // resultado es 15</code></pre>
-                                </div>
-                                <div id="info-resta" class="explanation-card">
-                                    <h4>Operador de Resta <code>-</code></h4>
-                                    <p>Resta el segundo valor del primero. Solo funciona con números.</p>
-                                    <pre><code class="language-java">int resultado = 10 - 5; // resultado es 5</code></pre>
-                                </div>
-                                <div id="info-multiplicacion" class="explanation-card">
-                                    <h4>Operador de Multiplicación <code>*</code></h4>
-                                    <p>Multiplica dos valores numéricos.</p>
-                                    <pre><code class="language-java">int resultado = 10 * 5; // resultado es 50</code></pre>
-                                </div>
-                                <div id="info-division" class="explanation-card">
-                                    <h4>Operador de División <code>/</code></h4>
-                                    <p>Divide el primer valor por el segundo. Si ambos son enteros, el resultado será un entero (sin decimales).</p>
-                                    <pre><code class="language-java">int resultado = 10 / 4; // resultado es 2</code></pre>
-                                </div>
-                                <div id="info-modulo" class="explanation-card">
-                                    <h4>Operador de Módulo <code>%</code></h4>
-                                    <p>Devuelve el resto de una división entera. Es muy útil para saber si un número es par o impar.</p>
-                                    <pre><code class="language-java">int resultado = 10 % 3; // resultado es 1</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="operator-explanation-col">
-                            <div class="code-terminal">
-                                <div class="code-terminal-header">OperadoresAritmeticos.java</div>
-                                <pre><code class="codigo-ejemplo">// Ejemplo de operadores aritméticos en Java
-int <span class="var">a</span> = 10;
-int <span class="var">b</span> = 3;
 
-int <span class="var">suma</span> = <span class="var">a</span> + <span class="var">b</span>;        // suma: 13
-int <span class="var">resta</span> = <span class="var">a</span> - <span class="var">b</span>;       // resta: 7
-int <span class="var">multiplicacion</span> = <span class="var">a</span> * <span class="var">b</span>; // multiplicación: 30
-int <span class="var">division</span> = <span class="var">a</span> / <span class="var">b</span>;    // división: 3 (división entera)
-int <span class="var">modulo</span> = <span class="var">a</span> % <span class="var">b</span>;      // módulo: 1 (resto de la división)
+                    <div class="operadores-lista-horizontal">
+                      <div class="operador-card operator-link active" data-target="ejemplo-suma"><span class="variable-highlight">suma</span> <span>(+)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-resta"><span class="variable-highlight">resta</span> <span>(-)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-multiplicacion"><span class="variable-highlight">multiplicación</span> <span>(*)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-division"><span class="variable-highlight">división</span> <span>(/)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-modulo"><span class="variable-highlight">módulo</span> <span>(%)</span></div>
+                    </div>
 
-System.out.println("Suma: " + <span class="var">suma</span>);
-System.out.println("Resta: " + <span class="var">resta</span>);
-System.out.println("Multiplicación: " + <span class="var">multiplicacion</span>);
-System.out.println("División: " + <span class="var">division</span>);
-System.out.println("Módulo: " + <span class="var">modulo</span>);
+                    <div class="operadores-ejemplos-interactivos">
+                      <div class="explanation-card active" id="ejemplo-suma">
+                        <div class="code-terminal">
+                          <div class="code-terminal-header">Suma (+)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
+int <span class="variable-highlight">b</span> = 3;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> + <span class="variable-highlight">b</span>; // resultado: 8
 </code></pre>
-                            </div>
                         </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-resta">
+                        <div class="code-terminal">
+                          <div class="code-terminal-header">Resta (-)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 4;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> - <span class="variable-highlight">b</span>; // resultado: 6
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-multiplicacion">
+                        <div class="code-terminal">
+                          <div class="code-terminal-header">Multiplicación (*)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
+int <span class="variable-highlight">b</span> = 6;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> * <span class="variable-highlight">b</span>; // resultado: 42
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-division">
+                        <div class="code-terminal">
+                          <div class="code-terminal-header">División (/)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 12;
+int <span class="variable-highlight">b</span> = 4;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> / <span class="variable-highlight">b</span>; // resultado: 3
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-modulo">
+                        <div class="code-terminal">
+                          <div class="code-terminal-header">Módulo (%)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 3;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> % <span class="variable-highlight">b</span>; // resultado: 1
+</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="asignacion-compuesta-section">
+                      <h3 class="asignacion-compuesta-title">Operadores de asignación compuesta</h3>
+                      <p class="asignacion-compuesta-desc">
+                        son operadores que combinan una operación (aritmética) con una asignación en una sola expresión, permitiendo modificar el valor de una variable aplicándole una operación y asignando el resultado en un paso simplificado.
+                      </p>
+                      <h4 class="asignacion-compuesta-subtitle">Características clave:</h4>
+                      <ul class="asignacion-compuesta-list">
+                        <li>Simplifican código: Reemplazan expresiones como <span class="variable-highlight">x = x + 5</span> por <span class="variable-highlight">x += 5</span>.</li>
+                        <li>Eficiencia: Algunos compiladores los optimizan mejor que sus equivalentes largos.</li>
+                        <li>Legibilidad: Hacen evidente que la variable se está modificando.</li>
+                      </ul>
+
+                      <div class="operadores-lista-horizontal asignacion-compuesta-lista">
+                        <div class="operador-card operator-link-assign active" data-target="ejemplo-assign-suma"><span class="variable-highlight">+=</span> <span>suma y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-resta"><span class="variable-highlight">-=</span> <span>resta y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-mult"><span class="variable-highlight">*=</span> <span>multiplica y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-div"><span class="variable-highlight">/=</span> <span>divide y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-mod"><span class="variable-highlight">%=</span> <span>módulo y asigna</span></div>
+                      </div>
+
+                      <div class="operadores-ejemplos-interactivos asignacion-compuesta-ejemplos">
+                        <div class="explanation-card active" id="ejemplo-assign-suma">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">+= (suma y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
+<span class="variable-highlight">x</span> += 5; // x ahora vale 15
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-resta">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">-= (resta y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
+<span class="variable-highlight">x</span> -= 3; // x ahora vale 7
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-mult">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">*= (multiplica y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 4;
+<span class="variable-highlight">x</span> *= 2; // x ahora vale 8
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-div">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">/= (divide y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 20;
+<span class="variable-highlight">x</span> /= 4; // x ahora vale 5
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-mod">
+                          <div class="code-terminal">
+                            <div class="code-terminal-header">%= (módulo y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 13;
+<span class="variable-highlight">x</span> %= 5; // x ahora vale 3
+</code></pre>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </section>
                 
