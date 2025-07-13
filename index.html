@@ -708,7 +708,93 @@ boolean <span class="variable-highlight">resultado</span> = !<span class="variab
                 
                 <section id="condicionales" class="content-section">
                     <h2>Condicionales</h2>
-                    <p>Una condición es una expresión lógica (que evalúa a true o false) que determina el flujo de ejecución de un programa. Las estructuras como if-else, switch y el operador ternario permiten decidir qué bloque de código ejecutar.</p>
+                    <p>En un entorno común una condición es un conjunto de acciones que se deben cumplir para que algo suceda.<br>
+Las plantas necesitan ciertas condiciones para crecer, como luz solar y agua. En Java, una condición es una expresión lógica (que evalúa a true o false) que determina el flujo de ejecución de un programa. A través de estructuras de control como if, else, switch o operadores ternarios, el programa decide qué bloque de código ejecutar basándose en si la condición se cumple (true) o no (false).</p>
+<h3 style="color: #6c40d4;">Estructura if-else</h3>
+<p>Tenemos la estructura if-else la cual sirve para determinar <strong>si</strong> una condición se cumple o no; por lo <strong>contrario</strong> se ejecutará la siguiente condición, el if-else es recomendado para cuando tenemos un programa ya con unas condiciones definidas algo que no crezca demasiado en el futuro para evitar unas condiciones en cascada, cuando tenemos N condiciones es mejor utilizar la expresión <strong>switch</strong>.</p>
+<div class="code-terminal">
+  <div class="code-terminal-header">IfElseEjemplo.java</div>
+  <pre><code class="language-java">int edad = 18;
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad.");
+} else {
+    System.out.println("Eres menor de edad.");
+}
+</code></pre>
+</div>
+<h3 style="color: #6c40d4;">Estructura switch:</h3>
+<p>La estructura switch es un bloque de control que se utiliza para ejecutar uno o varios bloques de código basándose en el valor de una expresión por lo tanto es multidireccional.<br>
+Es especialmente útil cuando se necesitan comparar múltiples variables posibles con valor y ejecutar diferentes acciones según el caso.</p>
+<h3 style="color: #6c40d4;">Características Clave:</h3>
+<ol>
+  <li><strong>Multidireccional:</strong><br>
+    Evalúa una expresión una sola vez y dirige el flujo del programa a un bloque de código específico (case) según el valor coincidente.
+  </li>
+  <li><strong>Tipos admitidos (desde Java 7+):</strong>
+    <ul>
+      <li>Tipos primitivos: byte, short, char, int.</li>
+      <li>Tipos envoltorio: Byte, Short, Character, Integer.</li>
+      <li>String (Java 7+).</li>
+      <li>enum.</li>
+    </ul>
+  </li>
+  <li><strong>Componentes principales:</strong>
+    <ul>
+      <li><strong>switch:</strong> Inicia la estructura.</li>
+      <li><strong>case:</strong> Define un valor posible y su bloque de código asociado.</li>
+      <li><strong>break:</strong> Termina la ejecución del switch (opcional, pero recomendado).</li>
+      <li><strong>default:</strong> Bloque ejecutado si ningún case coincide (opcional).</li>
+    </ul>
+  </li>
+</ol>
+<div class="code-terminal">
+  <div class="code-terminal-header">Sintaxis general del switch</div>
+  <pre><code class="language-java">switch (expresion) {
+    case valor1:
+        // Código a ejecutar si expresion == valor1
+        break;
+    case valor2:
+        // Código a ejecutar si expresion == valor2
+        break;
+    // ... más casos ...
+    default:
+        // Código si ningún caso coincide
+}
+</code></pre>
+</div>
+<div class="code-terminal">
+  <div class="code-terminal-header">Forma básica del switch</div>
+  <pre><code class="language-java">int dia = 3;
+switch (dia) {
+    case 1:
+        System.out.println("Lunes");
+        break;
+    case 2:
+        System.out.println("Martes");
+        break;
+    case 3:
+        System.out.println("Miércoles");
+        break;
+    default:
+        System.out.println("Otro día");
+}
+</code></pre>
+</div>
+<div class="code-terminal">
+  <div class="code-terminal-header">Switch con expresiones</div>
+  <pre><code class="language-java">int numero = 2 * 2;
+switch (numero) {
+    case 3 + 1:
+        System.out.println("Cuatro");
+        break;
+    case 2 * 3:
+        System.out.println("Seis");
+        break;
+    default:
+        System.out.println("Otro número");
+}
+</code></pre>
+</div>
                 </section>
 
                 <section id="bucles" class="content-section">
