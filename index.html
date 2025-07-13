@@ -710,7 +710,7 @@ boolean <span class="variable-highlight">resultado</span> = !<span class="variab
                     <h2>Condicionales</h2>
                     <p>En un entorno común una condición es un conjunto de acciones que se deben cumplir para que algo suceda.<br>
 Las plantas necesitan ciertas condiciones para crecer, como luz solar y agua. En Java, una condición es una expresión lógica (que evalúa a true o false) que determina el flujo de ejecución de un programa. A través de estructuras de control como if, else, switch o operadores ternarios, el programa decide qué bloque de código ejecutar basándose en si la condición se cumple (true) o no (false).</p>
-<h3 style="color: #6c40d4;">Estructura if-else</h3>
+<h3 class="subtitulo-violeta">Estructura if-else</h3>
 <p>Tenemos la estructura if-else la cual sirve para determinar <strong>si</strong> una condición se cumple o no; por lo <strong>contrario</strong> se ejecutará la siguiente condición, el if-else es recomendado para cuando tenemos un programa ya con unas condiciones definidas algo que no crezca demasiado en el futuro para evitar unas condiciones en cascada, cuando tenemos N condiciones es mejor utilizar la expresión <strong>switch</strong>.</p>
 <div class="code-terminal">
   <div class="code-terminal-header">IfElseEjemplo.java</div>
@@ -722,10 +722,10 @@ if (edad >= 18) {
 }
 </code></pre>
 </div>
-<h3 style="color: #6c40d4;">Estructura switch:</h3>
+<h3 class="subtitulo-violeta">Estructura switch:</h3>
 <p>La estructura switch es un bloque de control que se utiliza para ejecutar uno o varios bloques de código basándose en el valor de una expresión por lo tanto es multidireccional.<br>
 Es especialmente útil cuando se necesitan comparar múltiples variables posibles con valor y ejecutar diferentes acciones según el caso.</p>
-<h3 style="color: #6c40d4;">Características Clave:</h3>
+<h3 class="subtitulo-violeta">Características Clave:</h3>
 <ol>
   <li><strong>Multidireccional:</strong><br>
     Evalúa una expresión una sola vez y dirige el flujo del programa a un bloque de código específico (case) según el valor coincidente.
@@ -795,11 +795,114 @@ switch (numero) {
 }
 </code></pre>
 </div>
+<h3 class="subtitulo-violeta">Operador ternario.</h3>
+<p>El operador ternario es una estructura condicional compacta que permite tomar decisiones en una sola línea. Es una versión simplificada de un if-else, diseñada para asignar valores o ejecutar expresiones basadas en una condición.</p>
+<h4 class="subtitulo-violeta">Componentes:</h4>
+<p><strong>Condición:</strong> Expresión booleana que se evalúa como true o false.<br>
+<strong>(?)</strong> Separa la condición del valor si es verdadero.<br>
+<strong>(:)</strong> Separa el valor verdadero del falso.</p>
+<div class="code-terminal">
+  <div class="code-terminal-header">Sintaxis del operador ternario</div>
+  <pre><code class="language-java">resultado = (condicion) ? valorSiTrue : valorSiFalse;
+</code></pre>
+</div>
                 </section>
 
                 <section id="bucles" class="content-section">
                     <h2>Bucles (Estructuras de Repetición)</h2>
                     <p>Los bucles son bloques de control que permiten ejecutar un mismo código múltiples veces mientras se cumpla una condición. Son fundamentales para automatizar tareas repetitivas.</p>
+                    <h3 class="subtitulo-violeta">Estructura while (mientras)</h3>
+                    <p>Es una estructura de repetición que ejecuta un bloque de código mientras una condición es verdadera. La condición se evalúa antes de cada iteración, lo que significa que, si la condición es falsa desde el principio, el bucle no se ejecuta ni una sola vez.</p>
+                    <strong class="subtitulo-verde">Componentes:</strong>
+                    <ul>
+                        <li><strong>Inicialización:</strong> Dejar la variable necesaria para poder ejecutar el código</li>
+                        <li><strong>Condición:</strong> Cuando la condición es verdadera se ejecuta el código</li>
+                        <li><strong>Avance:</strong> Siempre tiene que haber una o varias instrucciones que hagan que con cada iteración el ciclo esté más cerca de terminar</li>
+                    </ul>
+                    <strong class="subtitulo-azul">Concepto clave:</strong>
+                    <ul>
+                        <li><strong>Iteración:</strong> Ejecutar repetidamente un conjunto de instrucciones dentro de un bucle.</li>
+                    </ul>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">WhileEjemplo.java</div>
+                      <pre><code class="language-java">int contador = 1;
+while (contador <= 5) {
+    System.out.println("Contador: " + contador);
+    contador++;
+}
+</code></pre>
+                    </div>
+                    <p><strong>Salida:</strong><br>
+Contador: 1<br>
+Contador: 2<br>
+Contador: 3<br>
+Contador: 4<br>
+Contador: 5
+</p>
+                    <h3 class="subtitulo-violeta">¿Cuándo Usar while?</h3>
+                    <ul>
+                        <li>Cuando el número de iteraciones es desconocido (ej: validaciones, lectura de datos).</li>
+                        <li>Para condiciones complejas que no dependen de un contador simple.</li>
+                        <li>En procesos interactivos (menús, juegos).</li>
+                    </ul>
+                    <strong class="subtitulo-violeta">Consejo clave:</strong>
+                    <p>Siempre asegúrate de que la condición del while eventualmente sea <strong>false</strong> para evitar bucles infinitos. Usa <code>break</code> o actualiza las variables de control dentro del bucle.</p>
+                    <h3 class="subtitulo-violeta">Bucle do - while.</h3>
+                    <p>El bucle do-while es una estructura de control que ejecuta un bloque de código al menos una vez, y luego repite la ejecución mientras una condición sea verdadera. A diferencia del bucle while (que evalúa la condición antes de ejecutar el código), el do-while evalúa la condición después de la primera iteración.</p>
+                    <h3 class="subtitulo-violeta">Flujo de ejecución</h3>
+                    <ul>
+                        <li>Ejecuta el bloque de código dentro del do.</li>
+                        <li>Evalúa la condición después de la ejecución.</li>
+                        <li>Si es true, repite el proceso.</li>
+                        <li>Si es false, sale del bucle.</li>
+                    </ul>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">DoWhileEjemplo.java</div>
+                      <pre><code class="language-java">int contador = 1;
+do {
+    System.out.println("Contador: " + contador);
+    contador++;
+} while (contador <= 5);
+// Salida:
+// Contador: 1
+// Contador: 2
+// Contador: 3
+// Contador: 4
+// Contador: 5
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Diferencias entre while y do-while</h3>
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Característica</th>
+                          <th>while</th>
+                          <th>do-while</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Evaluación de la condición</td>
+                          <td>Antes de ejecutar el bloque.</td>
+                          <td>Después de ejecutar el bloque.</td>
+                        </tr>
+                        <tr>
+                          <td>Primera iteración</td>
+                          <td>Puede no ejecutarse (si la condición inicial es false).</td>
+                          <td>Siempre se ejecuta al menos una vez (incluso si la condición es false).</td>
+                        </tr>
+                        <tr>
+                          <td>Uso típico</td>
+                          <td>Ideal cuando el número de iteraciones es desconocido y puede ser cero.</td>
+                          <td>Ideal cuando debes garantizar al menos una ejecución (ej: validaciones, menús interactivos).</td>
+                        </tr>
+                        <tr>
+                          <td>Ejemplo común</td>
+                          <td>Validar entrada después de un primer intento.</td>
+                          <td>Mostrar un menú hasta que el usuario elija salir.</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </section>
 
                 <section id="arrays" class="content-section">

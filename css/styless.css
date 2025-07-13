@@ -1044,3 +1044,14 @@ code[class*="language-"] * {
   }
 }
 
+/* Subtítulos personalizados para colores específicos */
+.subtitulo-violeta {
+  color: #6c40d4;
+}
+.subtitulo-verde {
+  color: #3cba54;
+}
+.subtitulo-azul {
+  color: #3c40d4;
+}
+
