@@ -26,6 +26,7 @@
                 <li><a href="#" class="topic-link" data-target="condicionales">Condicionales</a></li>
                 <li><a href="#" class="topic-link" data-target="bucles">Bucles</a></li>
                 <li><a href="#" class="topic-link" data-target="arrays">Arrays</a></li>
+                <li><a href="#" class="topic-link" data-target="ejercicios">Ejercicios</a></li>
             </ul>
         </nav>
         <div class="sidebar-backdrop"></div>
@@ -903,11 +904,251 @@ do {
                         </tr>
                       </tbody>
                     </table>
+                    <h3 class="subtitulo-violeta">Bucle for.</h3>
+                    <p>El bucle for es una estructura de control determinista diseñada para ejecutar un bloque de código un número específico de veces, con un control preciso sobre:</p>
+                    <ul>
+                        <li>Inicialización de una variable de control,</li>
+                        <li>Condición de continuación,</li>
+                        <li>Actualización del estado en cada iteración.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">conceptos de la sintaxis</h3>
+                    <p><strong>inicialización:</strong><br>
+                    Es donde defines e inicializas la variable de control (generalmente un contador).<br>
+                    Se ejecuta solo una vez, antes de que el bucle comience. <strong>Ejemplo:</strong> int i = 0.</p>
+                    <p><strong>Condición:</strong><br>
+                    Es una expresión booleana que se evalúa antes de cada iteración.<br>
+                    Si es true, el cuerpo del bucle se ejecuta; si es false, el bucle termina. <strong>Ejemplo:</strong> i &lt; 5.</p>
+                    <p><strong>Actualización:</strong><br>
+                    Es la operación que modifica la variable de control después de cada iteración.<br>
+                    Puede ser un incremento (i++), decremento (i--), u otra operación (i += 2). <strong>Ejemplo:</strong> i++.</p>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">ForEjemplo.java</div>
+                      <pre><code class="language-java">for (int i = 0; i < 5; i++) {
+    System.out.println("Valor de i: " + i);
+}
+// Salida:
+// Valor de i: 0
+// Valor de i: 1
+// Valor de i: 2
+// Valor de i: 3
+// Valor de i: 4
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Bucle for - each.</h3>
+                    <p>El bucle for-each (también llamado enhanced for loop) es una estructura simplificada diseñada específicamente para recorrer colecciones o arrays sin necesidad de manejar índices manualmente. Fue introducido en Java 5 para mejorar la legibilidad y reducir errores comunes.</p>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">ForEachEjemplo.java</div>
+                      <pre><code class="language-java">int[] numeros = {1, 2, 3, 4, 5};
+for (int num : numeros) {
+    System.out.println("Número: " + num);
+}
+// Salida:
+// Número: 1
+// Número: 2
+// Número: 3
+// Número: 4
+// Número: 5
+</code></pre>
+                    </div>
+                    <strong class="subtitulo-violeta">Limitaciones del for-each</strong>
+                    <ul>
+                        <li>No permite modificar el array/lista original (solo funciona con copias).</li>
+                        <li>No da acceso al índice (si necesitas el índice, usa for tradicional).</li>
+                        <li>No es compatible con todas las estructuras de datos (ej: no funciona con Map directamente).</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">Comparación: for Tradicional vs for-each</h3>
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Característica</th>
+                          <th>for Tradicional</th>
+                          <th>for-each</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Requiere índice</td>
+                          <td>Sí (i = 0; i &lt; length; i++)</td>
+                          <td>No</td>
+                        </tr>
+                        <tr>
+                          <td>Modifica elementos</td>
+                          <td>Permite modificar el array/list.</td>
+                          <td>Solo lectura (a menos que uses objetos mutables).</td>
+                        </tr>
+                        <tr>
+                          <td>Legibilidad</td>
+                          <td>Menos intuitivo</td>
+                          <td>Más claro y conciso</td>
+                        </tr>
+                        <tr>
+                          <td>Uso</td>
+                          <td>Cualquier iteración con lógica compleja.</td>
+                          <td>Solo para recorrer colecciones</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3 class="subtitulo-violeta">¿Por qué son importantes?</h3>
+                    <p><strong>Control preciso:</strong> Permiten manejar casos excepcionales dentro de bucles.<br>
+                    <strong>Optimización:</strong> Evitan procesamiento innecesario (ej: con break).<br>
+                    <strong>Legibilidad:</strong> Hacen el código más claro al evitar anidamientos complejos.</p>
+                    <h3 class="subtitulo-violeta">consejos</h3>
+                    <p>Usa break y continue con moderación para no hacer el código difícil de seguir.<br>
+                    En su lugar, considera refactorizar con métodos pequeños.</p>
                 </section>
 
                 <section id="arrays" class="content-section">
                     <h2>Arrays (Arreglos)</h2>
                     <p>Los Arrays son estructuras de datos que permiten almacenar múltiples valores del mismo tipo en una sola variable. Su tamaño es fijo; una vez definidos, no pueden crecer o reducirse.</p>
+                    <h3 class="subtitulo-violeta">¿Qué es un array?</h3>
+                    <p>Un array en Java es una estructura de datos que permite almacenar múltiples valores del mismo tipo en una sola variable. Los arrays tienen un tamaño fijo y cada elemento se accede mediante un índice (empezando desde 0).</p>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">Declaración y creación de un array</div>
+                      <pre><code class="language-java">int[] numeros = new int[5]; // Crea un array de 5 enteros
+</code></pre>
+                    </div>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">Inicialización de un array</div>
+                      <pre><code class="language-java">int[] numeros = {10, 20, 30, 40, 50};
+</code></pre>
+                    </div>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">Acceso y recorrido de un array</div>
+                      <pre><code class="language-java">for (int i = 0; i < numeros.length; i++) {
+    System.out.println("Elemento en posición " + i + ": " + numeros[i]);
+}
+// Salida:
+// Elemento en posición 0: 10
+// Elemento en posición 1: 20
+// Elemento en posición 2: 30
+// Elemento en posición 3: 40
+// Elemento en posición 4: 50
+</code></pre>
+                    </div>
+                    <div class="code-terminal">
+                      <div class="code-terminal-header">Recorrido con for-each</div>
+                      <pre><code class="language-java">for (int num : numeros) {
+    System.out.println("Número: " + num);
+}
+// Salida:
+// Número: 10
+// Número: 20
+// Número: 30
+// Número: 40
+// Número: 50
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Casos de uso comunes</h3>
+                    <ul>
+                        <li>Almacenar listas de datos del mismo tipo (números, nombres, etc.).</li>
+                        <li>Procesar grandes cantidades de información de manera eficiente.</li>
+                        <li>Implementar estructuras de datos como pilas, colas o matrices.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">Limitaciones de los arrays</h3>
+                    <ul>
+                        <li>Tamaño fijo: no se puede cambiar después de su creación.</li>
+                        <li>No permiten almacenar diferentes tipos de datos en el mismo array.</li>
+                        <li>Acceso manual por índice, lo que puede llevar a errores si no se controla bien.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">¿Cuándo usar un array?</h3>
+                    <ul>
+                        <li>Cuando conoces de antemano la cantidad de elementos a almacenar.</li>
+                        <li>Cuando necesitas acceso rápido y directo a los elementos por índice.</li>
+                        <li>Cuando todos los elementos son del mismo tipo de dato.</li>
+                    </ul>
+
+                </section>
+                <section id="ejercicios" class="content-section">
+                    <h2 class="subtitulo-violeta">Ejercicios</h2>
+                    <h3 class="subtitulo-violeta">¿Qué es Java?</h3>
+                    <ol>
+                        <li>Escribe un programa Java que imprima "¡Hola, Java!" en la consola.</li>
+                        <li>Modifica el programa anterior para que imprima tu nombre y tu edad.</li>
+                        <li>Crea un archivo llamado <code>MiClase.java</code> y escribe la estructura básica de una clase Java con un método <code>main</code>.</li>
+                        <li>Agrega un comentario en tu código explicando qué hace la función <code>main</code>.</li>
+                        <li>Compila y ejecuta tu programa desde la terminal. Escribe los comandos que usaste.</li>
+                        <li>Investiga y escribe para qué sirve la JVM en el proceso de ejecución de tu programa.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Fundamentos</h3>
+                    <ol>
+                        <li>Escribe un programa que pida al usuario dos números y muestre la suma.</li>
+                        <li>Modifica el programa para que también muestre la resta, multiplicación y división.</li>
+                        <li>Agrega comentarios en tu código explicando cada parte del ciclo de vida del programa (entrada, procesamiento, salida).</li>
+                        <li>Haz que el programa muestre un mensaje diferente si la suma es mayor a 100.</li>
+                        <li>Convierte el programa en un pseudocódigo antes de programarlo.</li>
+                        <li>Haz que el programa repita la operación hasta que el usuario escriba "salir".</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Tipos de Datos</h3>
+                    <ol>
+                        <li>Declara variables de todos los tipos primitivos en Java y asígnales un valor.</li>
+                        <li>Escribe un programa que convierta un <code>int</code> a <code>Integer</code> usando un wrapper.</li>
+                        <li>Imprime el valor máximo y mínimo de <code>int</code> usando las constantes de la clase <code>Integer</code>.</li>
+                        <li>Declara una variable <code>String</code> y muestra su longitud en consola.</li>
+                        <li>Convierte un <code>double</code> a <code>int</code> y muestra el resultado.</li>
+                        <li>Haz un programa que reciba un valor booleano y muestre un mensaje diferente según su valor.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Variables</h3>
+                    <ol>
+                        <li>Declara una variable de tipo <code>int</code> llamada <code>edad</code> y asígnale el valor 25. Imprime su valor.</li>
+                        <li>Intenta declarar una variable usando una palabra reservada y observa el error que produce.</li>
+                        <li>Declara una constante en Java y úsala en una operación matemática.</li>
+                        <li>Modifica el valor de una variable y muestra el resultado antes y después del cambio.</li>
+                        <li>Escribe un programa que pida al usuario su nombre y lo guarde en una variable.</li>
+                        <li>Declara una variable sin inicializar y luego asígnale un valor antes de usarla.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Operadores</h3>
+                    <ol>
+                        <li>Escribe un programa que reciba dos números y muestre el resultado de sumarlos, restarlos, multiplicarlos y dividirlos.</li>
+                        <li>Haz un programa que calcule el residuo de dividir dos números.</li>
+                        <li>Utiliza operadores de incremento y decremento en un ciclo y muestra los resultados.</li>
+                        <li>Escribe una expresión lógica que combine dos condiciones y muestra el resultado.</li>
+                        <li>Predice la salida de: <code>int x = 5; x += 3; x--;</code> ¿Cuál es el valor final de <code>x</code>?</li>
+                        <li>Corrige el siguiente código para que compile y funcione:
+<pre><code class="language-java">int a = 10
+if (a = 10) {
+    System.out.println("Diez");
+}</code></pre></li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Condicionales</h3>
+                    <ol>
+                        <li>Escribe un programa que pida la edad y muestre si eres mayor o menor de edad usando <code>if-else</code>.</li>
+                        <li>Haz un programa que reciba un número del 1 al 7 y muestre el día de la semana usando <code>switch</code>.</li>
+                        <li>Convierte una estructura <code>if-else</code> simple en un operador ternario.</li>
+                        <li>Corrige el siguiente código para que funcione:
+<pre><code class="language-java">int n = 5;
+if n > 3 {
+    System.out.println("Mayor que 3");
+}</code></pre></li>
+                        <li>Haz un programa que pida dos números y muestre cuál es mayor o si son iguales.</li>
+                        <li>Agrega una condición compuesta para verificar si un número está entre 10 y 20.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Bucles</h3>
+                    <ol>
+                        <li>Escribe un bucle <code>while</code> que imprima los números del 1 al 10.</li>
+                        <li>Haz un bucle <code>do-while</code> que pida números hasta que el usuario escriba 0.</li>
+                        <li>Escribe un bucle <code>for</code> que imprima los números pares del 2 al 20.</li>
+                        <li>Utiliza <code>break</code> para salir de un bucle cuando se cumpla una condición.</li>
+                        <li>Utiliza <code>continue</code> para saltar la impresión de un número específico en un bucle.</li>
+                        <li>Haz un programa que recorra un array usando <code>for-each</code> y sume todos sus elementos.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Arrays</h3>
+                    <ol>
+                        <li>Declara un array de 5 nombres y muestra cada uno en consola.</li>
+                        <li>Haz un programa que calcule el promedio de los valores en un array de enteros.</li>
+                        <li>Escribe un programa que busque un valor específico en un array y muestre su posición.</li>
+                        <li>Modifica un elemento de un array y muestra el array completo antes y después del cambio.</li>
+                        <li>Haz un programa que copie los elementos de un array en otro array.</li>
+                        <li>Declara un array bidimensional (matriz) de 3x3 e inicialízalo con valores del 1 al 9. Imprime la matriz.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Narrativas de negocio</h3>
+                    <ol>
+                        <li><strong>Cajero automático simple:</strong> Escribe un programa que simule un cajero automático. El usuario debe poder consultar su saldo, depositar y retirar dinero. Usa variables, condicionales y bucles.</li>
+                        <li><strong>Calculadora de promedios:</strong> Haz un programa que pida al usuario las calificaciones de 5 materias, las almacene en un array y calcule el promedio.</li>
+                        <li><strong>Gestor de inventario:</strong> Crea un programa que permita agregar, mostrar y buscar productos en un inventario simple usando arrays y bucles.</li>
+                        <li><strong>Encuesta de satisfacción:</strong> Escribe un programa que registre la respuesta de 10 clientes (satisfecho/insatisfecho) y al final muestre el porcentaje de satisfacción.</li>
+                        <li><strong>Control de acceso:</strong> Haz un programa que pida usuario y contraseña, y permita hasta 3 intentos antes de bloquear el acceso.</li>
+                        <li><strong>Menú interactivo:</strong> Crea un menú que permita al usuario elegir entre varias opciones (por ejemplo: ver saldo, transferir, salir) y repita hasta que elija salir.</li>
+                    </ol>
                 </section>
             </main>
         </div>
