@@ -126,7 +126,7 @@
                         
                             <h3 class="subsection-title">Tu Primer Contacto: "Hola, Mundo"</h3>
                             <p>La tradición de todo programador es empezar con un programa "Hola, Mundo". Su objetivo no es ser complejo, sino verificar que tu entorno de desarrollo está bien configurado y entiendes la estructura básica para ejecutar código.</p>
-                            <div class="code-terminal">
+                            <div class="code-terminal hidden">
                                 <div class="code-terminal-header">HolaMundo.java</div>
                                 <pre><code class="language-java">
                 // Mi primer programa en Java
@@ -174,7 +174,7 @@
                         <li><strong>Valores por Defecto:</strong> Si no se inicializan, Java les asigna un valor predeterminado (ejemplo: 0, 0.0, false).</li>
                         <li><strong>Clases Wrapper:</strong> Cada tipo primitivo tiene una clase equivalente (ejemplo: <code>int</code> - <code>Integer</code>) para usos en colecciones o APIs que requieren objeto.</li>
                     </ul>
-                    <table class="data-table">
+                    <table class="data-table hidden">
                       <thead>
                         <tr>
                           <th>TIPO</th>
@@ -253,7 +253,7 @@
                     </p>
                     <h3 class="subsection-title">Clases Wrapper</h3>
                     <p>Cada tipo primitivo en Java tiene una clase "envoltorio" (wrapper) que lo representa como un objeto. Esto es útil para usarlos en colecciones o APIs que requieren objetos.</p>
-                    <table class="data-table">
+                    <table class="data-table hidden">
                       <thead>
                         <tr>
                           <th>TIPO PRIMITIVO</th>
@@ -306,7 +306,7 @@
                     </table>
                     <h3 class="subsection-title">Datos No Primitivos (de Referencia)</h3>
                     <p>Estos tipos de datos almacenan una referencia (o dirección) a un objeto en la memoria. Pueden tener métodos y su valor puede ser nulo.</p>
-                    <table class="data-table">
+                    <table class="data-table hidden">
                       <thead>
                         <tr>
                           <th>Tipo</th>
@@ -356,7 +356,7 @@
                         Algunas palabras como true, false y null no son keywords, sino literales reservados, pero tampoco pueden usarse como identificadores.
                     </div>
                     <h3 class="subsection-title">Mapa de Palabras Reservadas</h3>
-                    <div class="mind-map-svg-wrapper">
+                    <div class="mind-map-container hidden">
                       <svg class="mind-map-lines" viewBox="0 0 900 400" width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true">
                         <!-- Líneas horizontales -->
                         <line x1="150" y1="200" x2="450" y2="200" />
@@ -458,7 +458,7 @@
 
                     <div class="operadores-ejemplos-interactivos">
                       <div class="explanation-card active" id="ejemplo-suma">
-                        <div class="code-terminal">
+                        <div class="code-terminal hidden">
                           <div class="code-terminal-header">Suma (+)</div>
                           <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
 int <span class="variable-highlight">b</span> = 3;
@@ -467,7 +467,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                         </div>
                       </div>
                       <div class="explanation-card" id="ejemplo-resta">
-                        <div class="code-terminal">
+                        <div class="code-terminal hidden">
                           <div class="code-terminal-header">Resta (-)</div>
                           <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
 int <span class="variable-highlight">b</span> = 4;
@@ -476,7 +476,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                         </div>
                       </div>
                       <div class="explanation-card" id="ejemplo-multiplicacion">
-                        <div class="code-terminal">
+                        <div class="code-terminal hidden">
                           <div class="code-terminal-header">Multiplicación (*)</div>
                           <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
 int <span class="variable-highlight">b</span> = 6;
@@ -485,7 +485,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                         </div>
                       </div>
                       <div class="explanation-card" id="ejemplo-division">
-                        <div class="code-terminal">
+                        <div class="code-terminal hidden">
                           <div class="code-terminal-header">División (/)</div>
                           <pre><code class="language-java">int <span class="variable-highlight">a</span> = 12;
 int <span class="variable-highlight">b</span> = 4;
@@ -494,7 +494,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                         </div>
                       </div>
                       <div class="explanation-card" id="ejemplo-modulo">
-                        <div class="code-terminal">
+                        <div class="code-terminal hidden">
                           <div class="code-terminal-header">Módulo (%)</div>
                           <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
 int <span class="variable-highlight">b</span> = 3;
@@ -525,7 +525,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
 
                       <div class="operadores-ejemplos-interactivos asignacion-compuesta-ejemplos">
                         <div class="explanation-card active" id="ejemplo-assign-suma">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">+= (suma y asigna)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
 <span class="variable-highlight">x</span> += 5; // x ahora vale 15
@@ -533,7 +533,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                           </div>
                         </div>
                         <div class="explanation-card" id="ejemplo-assign-resta">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">-= (resta y asigna)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
 <span class="variable-highlight">x</span> -= 3; // x ahora vale 7
@@ -541,7 +541,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                           </div>
                         </div>
                         <div class="explanation-card" id="ejemplo-assign-mult">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">*= (multiplica y asigna)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 4;
 <span class="variable-highlight">x</span> *= 2; // x ahora vale 8
@@ -549,7 +549,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                           </div>
                         </div>
                         <div class="explanation-card" id="ejemplo-assign-div">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">/= (divide y asigna)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 20;
 <span class="variable-highlight">x</span> /= 4; // x ahora vale 5
@@ -557,7 +557,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                           </div>
                         </div>
                         <div class="explanation-card" id="ejemplo-assign-mod">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">%= (módulo y asigna)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 13;
 <span class="variable-highlight">x</span> %= 5; // x ahora vale 3
@@ -577,7 +577,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                       </div>
                       <div class="operadores-ejemplos-interactivos incremento-decremento-ejemplos">
                         <div class="explanation-card active" id="ejemplo-inc">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">++ (incremento)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
 <span class="variable-highlight">x</span>++;
@@ -586,7 +586,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
                           </div>
                         </div>
                         <div class="explanation-card" id="ejemplo-dec">
-                          <div class="code-terminal">
+                          <div class="code-terminal hidden">
                             <div class="code-terminal-header">-- (decremento)</div>
                             <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
 <span class="variable-highlight">x</span>--;
@@ -611,7 +611,7 @@ int <span class="variable-highlight">resultado</span> = <span class="variable-hi
   </div>
   <div class="operadores-ejemplos-interactivos relacionales-ejemplos">
     <div class="explanation-card active" id="ejemplo-igual">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">== (igual a)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
 int <span class="variable-highlight">b</span> = 5;
@@ -620,7 +620,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-diferente">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">!= (diferente de)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
 int <span class="variable-highlight">b</span> = 3;
@@ -629,7 +629,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-mayor">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">&gt; (mayor que)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
 int <span class="variable-highlight">b</span> = 4;
@@ -638,7 +638,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-menor">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">&lt; (menor que)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 2;
 int <span class="variable-highlight">b</span> = 8;
@@ -647,7 +647,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-mayor-igual">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">&gt;= (mayor o igual)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 6;
 int <span class="variable-highlight">b</span> = 6;
@@ -656,7 +656,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-menor-igual">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">&lt;= (menor o igual)</div>
         <pre><code class="language-java">int <span class="variable-highlight">a</span> = 3;
 int <span class="variable-highlight">b</span> = 7;
@@ -678,7 +678,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
   </div>
   <div class="operadores-ejemplos-interactivos logicos-ejemplos">
     <div class="explanation-card active" id="ejemplo-and">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">&& (AND)</div>
         <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
 boolean <span class="variable-highlight">b</span> = false;
@@ -687,7 +687,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-or">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">|| (OR)</div>
         <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
 boolean <span class="variable-highlight">b</span> = false;
@@ -696,7 +696,7 @@ boolean <span class="variable-highlight">resultado</span> = <span class="variabl
       </div>
     </div>
     <div class="explanation-card" id="ejemplo-not">
-      <div class="code-terminal">
+      <div class="code-terminal hidden">
         <div class="code-terminal-header">! (NOT)</div>
         <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = false;
 boolean <span class="variable-highlight">resultado</span> = !<span class="variable-highlight">a</span>; // true
@@ -713,7 +713,7 @@ boolean <span class="variable-highlight">resultado</span> = !<span class="variab
 Las plantas necesitan ciertas condiciones para crecer, como luz solar y agua. En Java, una condición es una expresión lógica (que evalúa a true o false) que determina el flujo de ejecución de un programa. A través de estructuras de control como if, else, switch o operadores ternarios, el programa decide qué bloque de código ejecutar basándose en si la condición se cumple (true) o no (false).</p>
 <h3 class="subtitulo-violeta">Estructura if-else</h3>
 <p>Tenemos la estructura if-else la cual sirve para determinar <strong>si</strong> una condición se cumple o no; por lo <strong>contrario</strong> se ejecutará la siguiente condición, el if-else es recomendado para cuando tenemos un programa ya con unas condiciones definidas algo que no crezca demasiado en el futuro para evitar unas condiciones en cascada, cuando tenemos N condiciones es mejor utilizar la expresión <strong>switch</strong>.</p>
-<div class="code-terminal">
+<div class="code-terminal hidden">
   <div class="code-terminal-header">IfElseEjemplo.java</div>
   <pre><code class="language-java">int edad = 18;
 if (edad >= 18) {
@@ -748,7 +748,7 @@ Es especialmente útil cuando se necesitan comparar múltiples variables posible
     </ul>
   </li>
 </ol>
-<div class="code-terminal">
+<div class="code-terminal hidden">
   <div class="code-terminal-header">Sintaxis general del switch</div>
   <pre><code class="language-java">switch (expresion) {
     case valor1:
@@ -763,7 +763,7 @@ Es especialmente útil cuando se necesitan comparar múltiples variables posible
 }
 </code></pre>
 </div>
-<div class="code-terminal">
+<div class="code-terminal hidden">
   <div class="code-terminal-header">Forma básica del switch</div>
   <pre><code class="language-java">int dia = 3;
 switch (dia) {
@@ -781,7 +781,7 @@ switch (dia) {
 }
 </code></pre>
 </div>
-<div class="code-terminal">
+<div class="code-terminal hidden">
   <div class="code-terminal-header">Switch con expresiones</div>
   <pre><code class="language-java">int numero = 2 * 2;
 switch (numero) {
@@ -802,7 +802,7 @@ switch (numero) {
 <p><strong>Condición:</strong> Expresión booleana que se evalúa como true o false.<br>
 <strong>(?)</strong> Separa la condición del valor si es verdadero.<br>
 <strong>(:)</strong> Separa el valor verdadero del falso.</p>
-<div class="code-terminal">
+<div class="code-terminal hidden">
   <div class="code-terminal-header">Sintaxis del operador ternario</div>
   <pre><code class="language-java">resultado = (condicion) ? valorSiTrue : valorSiFalse;
 </code></pre>
@@ -824,7 +824,7 @@ switch (numero) {
                     <ul>
                         <li><strong>Iteración:</strong> Ejecutar repetidamente un conjunto de instrucciones dentro de un bucle.</li>
                     </ul>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">WhileEjemplo.java</div>
                       <pre><code class="language-java">int contador = 1;
 while (contador <= 5) {
@@ -857,7 +857,7 @@ Contador: 5
                         <li>Si es true, repite el proceso.</li>
                         <li>Si es false, sale del bucle.</li>
                     </ul>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">DoWhileEjemplo.java</div>
                       <pre><code class="language-java">int contador = 1;
 do {
@@ -873,7 +873,7 @@ do {
 </code></pre>
                     </div>
                     <h3 class="subtitulo-violeta">Diferencias entre while y do-while</h3>
-                    <table class="data-table">
+                    <table class="data-table hidden">
                       <thead>
                         <tr>
                           <th>Característica</th>
@@ -921,7 +921,7 @@ do {
                     <p><strong>Actualización:</strong><br>
                     Es la operación que modifica la variable de control después de cada iteración.<br>
                     Puede ser un incremento (i++), decremento (i--), u otra operación (i += 2). <strong>Ejemplo:</strong> i++.</p>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">ForEjemplo.java</div>
                       <pre><code class="language-java">for (int i = 0; i < 5; i++) {
     System.out.println("Valor de i: " + i);
@@ -936,7 +936,7 @@ do {
                     </div>
                     <h3 class="subtitulo-violeta">Bucle for - each.</h3>
                     <p>El bucle for-each (también llamado enhanced for loop) es una estructura simplificada diseñada específicamente para recorrer colecciones o arrays sin necesidad de manejar índices manualmente. Fue introducido en Java 5 para mejorar la legibilidad y reducir errores comunes.</p>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">ForEachEjemplo.java</div>
                       <pre><code class="language-java">int[] numeros = {1, 2, 3, 4, 5};
 for (int num : numeros) {
@@ -957,7 +957,7 @@ for (int num : numeros) {
                         <li>No es compatible con todas las estructuras de datos (ej: no funciona con Map directamente).</li>
                     </ul>
                     <h3 class="subtitulo-violeta">Comparación: for Tradicional vs for-each</h3>
-                    <table class="data-table">
+                    <table class="data-table hidden">
                       <thead>
                         <tr>
                           <th>Característica</th>
@@ -1002,17 +1002,17 @@ for (int num : numeros) {
                     <p>Los Arrays son estructuras de datos que permiten almacenar múltiples valores del mismo tipo en una sola variable. Su tamaño es fijo; una vez definidos, no pueden crecer o reducirse.</p>
                     <h3 class="subtitulo-violeta">¿Qué es un array?</h3>
                     <p>Un array en Java es una estructura de datos que permite almacenar múltiples valores del mismo tipo en una sola variable. Los arrays tienen un tamaño fijo y cada elemento se accede mediante un índice (empezando desde 0).</p>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">Declaración y creación de un array</div>
                       <pre><code class="language-java">int[] numeros = new int[5]; // Crea un array de 5 enteros
 </code></pre>
                     </div>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">Inicialización de un array</div>
                       <pre><code class="language-java">int[] numeros = {10, 20, 30, 40, 50};
 </code></pre>
                     </div>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">Acceso y recorrido de un array</div>
                       <pre><code class="language-java">for (int i = 0; i < numeros.length; i++) {
     System.out.println("Elemento en posición " + i + ": " + numeros[i]);
@@ -1025,7 +1025,7 @@ for (int num : numeros) {
 // Elemento en posición 4: 50
 </code></pre>
                     </div>
-                    <div class="code-terminal">
+                    <div class="code-terminal hidden">
                       <div class="code-terminal-header">Recorrido con for-each</div>
                       <pre><code class="language-java">for (int num : numeros) {
     System.out.println("Número: " + num);
