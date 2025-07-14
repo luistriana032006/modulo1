@@ -190,4 +190,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+
+    // --- Checklist de Progreso ---
+    document.querySelectorAll('.progress-checkbox').forEach(checkbox => {
+      const target = checkbox.getAttribute('data-target');
+      const key = 'progress-' + target;
+      const link = checkbox.parentElement.querySelector('.topic-link');
+      // Cargar estado
+      if (localStorage.getItem(key) === 'true') {
+        checkbox.checked = true;
+        if (link) {
+          link.style.textDecoration = 'line-through';
+          link.style.opacity = '0.7';
+        }
+      }
+      // Guardar estado
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          localStorage.setItem(key, 'true');
+          if (link) {
+            link.style.textDecoration = 'line-through';
+            link.style.opacity = '0.7';
+          }
+        } else {
+          localStorage.removeItem(key);
+          if (link) {
+            link.style.textDecoration = '';
+            link.style.opacity = '';
+          }
+        }
+      });
+    });
+
+    // --- Inicializar Tippy.js para el glosario ---
+    if (window.tippy) {
+      tippy('[data-tippy-content]');
+    }
 });

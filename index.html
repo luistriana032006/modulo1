@@ -18,15 +18,60 @@
                 <h2>Módulo 1: Java</h2>
             </div>
             <ul class="topic-menu">
-                <li><a href="#" class="topic-link active" data-target="que-es-java">¿Qué es Java?</a></li>
-                <li><a href="#" class="topic-link" data-target="fundamentos">Fundamentos</a></li>
-                <li><a href="#" class="topic-link" data-target="tipos-de-datos">Tipos de Datos</a></li>
-                <li><a href="#" class="topic-link" data-target="variables">Variables</a></li>
-                <li><a href="#" class="topic-link" data-target="operadores">Operadores</a></li>
-                <li><a href="#" class="topic-link" data-target="condicionales">Condicionales</a></li>
-                <li><a href="#" class="topic-link" data-target="bucles">Bucles</a></li>
-                <li><a href="#" class="topic-link" data-target="arrays">Arrays</a></li>
-                <li><a href="#" class="topic-link" data-target="ejercicios">Ejercicios</a></li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="que-es-java">
+                        <a href="#" class="topic-link active" data-target="que-es-java">¿Qué es Java?</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="fundamentos">
+                        <a href="#" class="topic-link" data-target="fundamentos">Fundamentos</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="tipos-de-datos">
+                        <a href="#" class="topic-link" data-target="tipos-de-datos">Tipos de Datos</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="variables">
+                        <a href="#" class="topic-link" data-target="variables">Variables</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="operadores">
+                        <a href="#" class="topic-link" data-target="operadores">Operadores</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="condicionales">
+                        <a href="#" class="topic-link" data-target="condicionales">Condicionales</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="bucles">
+                        <a href="#" class="topic-link" data-target="bucles">Bucles</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="arrays">
+                        <a href="#" class="topic-link" data-target="arrays">Arrays</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="ejercicios">
+                        <a href="#" class="topic-link" data-target="ejercicios">Ejercicios</a>
+                    </label>
+                </li>
             </ul>
         </nav>
         <div class="sidebar-backdrop"></div>
@@ -67,13 +112,13 @@
                     <h2>¿Qué es Java y cómo funciona?</h2>
                     <p>Java es un lenguaje de programación desarrollado por Sun Microsystems en 1995 y ahora es mantenido por Oracle. Es conocido por su versatilidad, seguridad y portabilidad.</p>
                     <h3>JDK (Java Development Kit)</h3>
-                    <p>El JDK es un paquete de herramientas proporcionado por Oracle que contiene todo lo necesario para desarrollar aplicaciones en Java. Incluye el JRE (Entorno de Ejecución de Java), que a su vez contiene la JVM (Máquina Virtual de Java) y las bibliotecas de clases.</p>
+                    <p>El <span class="glossary-term" data-tippy-content="Java Development Kit: Es el paquete de herramientas para desarrollar en Java.">JDK</span> es un paquete de herramientas proporcionado por Oracle que contiene todo lo necesario para desarrollar aplicaciones en Java. Incluye el JRE (Entorno de Ejecución de Java), que a su vez contiene la <span class="glossary-term" data-tippy-content="Java Virtual Machine: Es el motor que ejecuta el código Java compilado.">JVM</span> y las bibliotecas de clases.</p>
                     
                     <h4>Componentes del JDK:</h4>
                     <ol>
                         <li><strong>JRE (Java Runtime Environment)</strong>
                             <ul>
-                                <li><strong>JVM (Java Virtual Machine)</strong>: Ejecuta el bytecode (.class)</li>
+                                <li><strong>JVM (Java Virtual Machine)</strong>: Ejecuta el <span class="glossary-term" data-tippy-content="Bytecode: Es el código intermedio generado por el compilador de Java que la JVM puede ejecutar.">bytecode</span> (.class)</li>
                                 <li><strong>java.lang</strong>: Clases básicas como String, System</li>
                                 <li><strong>java.util</strong>: Colecciones, fechas</li>
                                 <li><strong>java.io</strong>: Manejo de archivos</li>
@@ -1170,5 +1215,7 @@ if n > 3 {
     </div>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 </body>
 </html>
