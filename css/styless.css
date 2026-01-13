@@ -4,7 +4,7 @@
   --content-bg: #ffffff;
   --text-color: #333;
   --header-text-color: #1a1a1a;
-  --accent-color: #6a1b9a;
+  --accent-color: #d81b60;
   --link-active-bg: #f3e5f5;
   --shadow-color: rgba(0, 0, 0, 0.05);
 
@@ -20,7 +20,7 @@
   --content-bg: #1e1e1e;
   --text-color: #e0e0e0;
   --header-text-color: #ffffff;
-  --accent-color: #bb86fc;
+  --accent-color: #f48fb1;
   --link-active-bg: #3a3a3a;
   --shadow-color: rgba(0, 0, 0, 0.2);
 
@@ -64,7 +64,7 @@ body {
 }
 
 .sidebar-header h2 {
-  color: #A78BFA;
+  color: #f48fb1;
   margin-bottom: 2rem;
 }
 
@@ -177,7 +177,7 @@ body {
 }
 
 .content-section h2 {
-  color: #A78BFA;
+  color: #f48fb1;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.5rem;
@@ -187,7 +187,7 @@ body {
 .content-section h4 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #6D28D8;
+  color: #ec407a;
 }
 
 .theme-switch-wrapper {
@@ -793,8 +793,8 @@ code[class*="language-"] * {
 [data-theme="dark"] .mind-map-center {
   background-color: #23272e;
   color: #fff;
-  border-color: #bb86fc;
-  box-shadow: 0 4px 24px 0 #bb86fc44, 0 0 0 4px #bb86fc;
+  border-color: #f48fb1;
+  box-shadow: 0 4px 24px 0 #f48fb144, 0 0 0 4px #f48fb1;
 }
 .mind-map-card {
   background-color: var(--accent-color);
@@ -823,9 +823,9 @@ code[class*="language-"] * {
 }
 [data-theme="dark"] .mind-map-card:hover {
   background: #23272e;
-  color: #bb86fc;
-  border: 2px solid #bb86fc;
-  box-shadow: 0 8px 24px 0 #bb86fc44, 0 0 0 4px #bb86fc33;
+  color: #f48fb1;
+  border: 2px solid #f48fb1;
+  box-shadow: 0 8px 24px 0 #f48fb144, 0 0 0 4px #f48fb133;
 }
 .mind-map-card h5 {
   font-size: 1.05rem;
@@ -1201,7 +1201,7 @@ code[class*="language-"] * {
 
 /* Subtítulos personalizados para colores específicos */
 .subtitulo-violeta {
-  color: #6c40d4;
+  color: #ec407a;
 }
 .subtitulo-verde {
   color: #3cba54;
