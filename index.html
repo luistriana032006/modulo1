@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="description" content="Una guía interactiva para aprender los fundamentos de programación en Java.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Programación en Java</title>
+    <link rel="stylesheet" href="css/styless.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Módulo 1: Java</h2>
+                <div class="progress-indicator">
+                  <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                  </div>
+                  <span class="progress-label" id="progressLabel">0 / 9 completados</span>
+                </div>
+            </div>
+            <div class="search-box">
+              <input type="text" id="searchInput" placeholder="🔍 Buscar..." autocomplete="off">
+              <span class="search-results-count" id="searchCount"></span>
+            </div>
+            <ul class="topic-menu">
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="que-es-java">
+                        <a href="#" class="topic-link active" data-target="que-es-java">¿Qué es Java?</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="fundamentos">
+                        <a href="#" class="topic-link" data-target="fundamentos">Fundamentos</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="tipos-de-datos">
+                        <a href="#" class="topic-link" data-target="tipos-de-datos">Tipos de Datos</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="variables">
+                        <a href="#" class="topic-link" data-target="variables">Variables</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="operadores">
+                        <a href="#" class="topic-link" data-target="operadores">Operadores</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="condicionales">
+                        <a href="#" class="topic-link" data-target="condicionales">Condicionales</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="bucles">
+                        <a href="#" class="topic-link" data-target="bucles">Bucles</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="arrays">
+                        <a href="#" class="topic-link" data-target="arrays">Arrays</a>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" class="progress-checkbox" data-target="ejercicios">
+                        <a href="#" class="topic-link" data-target="ejercicios">Ejercicios</a>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-backdrop"></div>
+
+        <div class="main-content">
+            <div class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <header class="main-header">
+                <h1>Fundamentos de Programación en Java</h1>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+            </header>
+
+            <main class="content">
+                <section id="que-es-java" class="content-section active">
+                    <h2>¿Qué es Java y cómo funciona?</h2>
+                    <p>Java es un lenguaje de programación desarrollado por Sun Microsystems en 1995 y ahora es mantenido por Oracle. Es conocido por su versatilidad, seguridad y portabilidad.</p>
+                    <h3>JDK (Java Development Kit)</h3>
+                    <p>El <span class="glossary-term" data-tippy-content="Java Development Kit: Es el paquete de herramientas para desarrollar en Java.">JDK</span> es un paquete de herramientas proporcionado por Oracle que contiene todo lo necesario para desarrollar aplicaciones en Java. Incluye el JRE (Entorno de Ejecución de Java), que a su vez contiene la <span class="glossary-term" data-tippy-content="Java Virtual Machine: Es el motor que ejecuta el código Java compilado.">JVM</span> y las bibliotecas de clases.</p>
+                    
+                    <h4>Componentes del JDK:</h4>
+                    <ol>
+                        <li><strong>JRE (Java Runtime Environment)</strong>
+                            <ul>
+                                <li><strong>JVM (Java Virtual Machine)</strong>: Ejecuta el <span class="glossary-term" data-tippy-content="Bytecode: Es el código intermedio generado por el compilador de Java que la JVM puede ejecutar.">bytecode</span> (.class)</li>
+                                <li><strong>java.lang</strong>: Clases básicas como String, System</li>
+                                <li><strong>java.util</strong>: Colecciones, fechas</li>
+                                <li><strong>java.io</strong>: Manejo de archivos</li>
+                                <li><strong>java.net</strong>: Conexiones de red</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Herramientas de desarrollo</strong>
+                            <ul>
+                                <li><strong>javac</strong>: Compilador (.java → .class)</li>
+                                <li><strong>java</strong>: Ejecutador de aplicaciones</li>
+                                <li><strong>javadoc</strong>: Genera documentación HTML</li>
+                                <li><strong>jdb</strong>: Depurador</li>
+                                <li><strong>jar</strong>: Crea archivos .jar (empaquetado)</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Bibliotecas adicionales</strong>
+                            <ul>
+                                <li><strong>GUI</strong>: AWT/Swing, JavaFX</li>
+                                <li><strong>Bases de datos</strong>: JDBC</li>
+                                <li><strong>Seguridad</strong>: Criptografía</li>
+                                <li><strong>Multihilo</strong>: java.util.concurrent</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Herramientas de monitoreo/optimización</strong>
+                            <ul>
+                                <li><strong>jconsole</strong>: Monitorea recursos (CPU, memoria)</li>
+                                <li><strong>jvisualvm</strong>: Perfilador de aplicaciones</li>
+                                <li><strong>javap</strong>: Desensambla bytecode</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Utilidades para desarrollo avanzado</strong>
+                            <ul>
+                                <li><strong>native2ascii</strong>: Convierte caracteres Unicode</li>
+                                <li><strong>keytool</strong>: Manejo de certificados SSL</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="fundamentos" class="content-section">
+                    <div class="fundamentos-grid">
+                        <div class="fundamentos-texto">
+                            <h2>Fundamentos de programación</h2>
+                            <p>Los fundamentos de la programación consisten en el primer grupo de conceptos que tiene que entender un desarrollador. La lógica de programación siempre es la misma, lo que cambia es la sintaxis del lenguaje.</p>
+                        
+                            <h3 class="subsection-title">El Ciclo de Vida de un Programa</h3>
+                            <div class="columns-container">
+                                <div class="column">
+                                    <h4>1. Entrada (Input)</h4>
+                                    <p>Son los datos que tu programa necesita para trabajar. Puede ser texto escrito por un usuario, información de una base de datos o un clic del ratón.</p>
+                                </div>
+                                <div class="column">
+                                    <h4>2. Procesamiento (Processing)</h4>
+                                    <p>Aquí ocurre la magia. Es el conjunto de instrucciones (el algoritmo) que toma la entrada, la manipula, hace cálculos y toma decisiones.</p>
+                                </div>
+                                <div class="column">
+                                    <h4>3. Salida (Output)</h4>
+                                    <p>Es el resultado que el programa devuelve después del procesamiento. Puede ser un mensaje en pantalla, un archivo guardado o una acción realizada.</p>
+                                </div>
+                            </div>
+                        
+                            <h3 class="subsection-title">Tu Primer Contacto: "Hola, Mundo"</h3>
+                            <p>La tradición de todo programador es empezar con un programa "Hola, Mundo". Su objetivo no es ser complejo, sino verificar que tu entorno de desarrollo está bien configurado y entiendes la estructura básica para ejecutar código.</p>
+                            <div class="code-terminal hidden">
+                                <div class="code-terminal-header">HolaMundo.java</div>
+                                <pre><code class="language-java">
+                // Mi primer programa en Java
+                public class HolaMundo {
+                    public static void main(String[] args) {
+                        // Esta línea imprime el texto en la consola.
+                        System.out.println("¡Hola, Mundo desde Java!");
+                    }
+                }
+                                </code></pre>
+                            </div>
+                            <div class="explicacion-codigo">
+                                <h4>¿Qué hace este código?</h4>
+                                <p>
+                                    Este pequeño programa en Java muestra el mensaje <strong>"¡Hola, Mundo desde Java!"</strong> en la pantalla. Es el primer paso de muchos programadores porque ayuda a comprobar que todo está funcionando bien.<br><br>
+                                    ¿Cómo funciona? Imagina que el programa es como un mensajero: cuando lo ejecutas, va directo a la consola y deja el mensaje para ti. No necesitas entender palabras complicadas, solo saber que este código le dice a la computadora: "¡Escribe esto en la pantalla!".<br><br>
+                                    Así, puedes ver que tu entorno de Java está listo y que puedes empezar a crear tus propios programas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="fundamentos-cuadros">
+                            <div class="cuadro condiciones">Condiciones</div>
+                            <div class="cuadro bucles">Bucles</div>
+                            <div class="cuadro tipos-datos">Tipos de datos</div>
+                            <div class="cuadro operadores">Operadores</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="tipos-de-datos" class="content-section">
+                    <h2>Tipos de Datos</h2>
+                    <p>En los fundamentos de programación tenemos tipos de datos primitivos junto a sus wrappers y los no primitivos, los tipos de datos son una categorización de los valores que puede almacenar una variable y las operaciones que se pueden hacer con ese tipo de dato.</p>
+                    <h3>Datos primitivos:</h3>
+                    <ul>
+                        <li>Los datos primitivos en Java son los que almacenan un valor en memoria, están almacenados en el <strong>Stack</strong> (memoria rápida para datos efímeros).</li>
+                        <li>No pertenecen a un objeto.</li>
+                        <li>No contienen métodos ni atributos.</li>
+                        <li>Son medibles (por ejemplo: 0, 0.0, false).</li>
+                    </ul>
+                    <h3>Características Clave de los Tipos Primitivos</h3>
+                    <ul>
+                        <li><strong>Almacenamiento en Stack:</strong> Ocupan memoria fija y directa, lo que los hace más rápidos que los objetos.</li>
+                        <li><strong>Inmutabilidad:</strong> Su valor no puede modificarse sin reasignación (ejemplo: <code>int x = 5; x = 10;</code>).</li>
+                        <li><strong>Eficiencia:</strong> Ideales para operaciones matemáticas intensivas por su bajo overhead.</li>
+                        <li><strong>Valores por Defecto:</strong> Si no se inicializan, Java les asigna un valor predeterminado (ejemplo: 0, 0.0, false).</li>
+                        <li><strong>Clases Wrapper:</strong> Cada tipo primitivo tiene una clase equivalente (ejemplo: <code>int</code> - <code>Integer</code>) para usos en colecciones o APIs que requieren objeto.</li>
+                    </ul>
+                    <table class="data-table hidden">
+                      <thead>
+                        <tr>
+                          <th>TIPO</th>
+                          <th>TAMAÑO (BITS)</th>
+                          <th>VALOR MÍNIMO</th>
+                          <th>VALOR MÁXIMO</th>
+                          <th>EJEMPLO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>byte</td>
+                          <td>8</td>
+                          <td>-128</td>
+                          <td>127</td>
+                          <td><code>byte edad = 30;</code></td>
+                        </tr>
+                        <tr>
+                          <td>short</td>
+                          <td>16</td>
+                          <td>-32,768</td>
+                          <td>32,767</td>
+                          <td><code>short distancia = 2000;</code></td>
+                        </tr>
+                        <tr>
+                          <td>int</td>
+                          <td>32</td>
+                          <td>-2,147,483,648</td>
+                          <td>2,147,483,647</td>
+                          <td><code>int cantidad = 100000;</code></td>
+                        </tr>
+                        <tr>
+                          <td>long</td>
+                          <td>64</td>
+                          <td>-9,223...808L</td>
+                          <td>9,223...807L</td>
+                          <td><code>long estrellas = 9223372036854775807L;</code></td>
+                        </tr>
+                        <tr>
+                          <td>float</td>
+                          <td>32</td>
+                          <td>≈ 1.4 x 10<sup>-45</sup></td>
+                          <td>≈ 3.4 x 10<sup>38</sup></td>
+                          <td><code>float precio = 19.99f;</code></td>
+                        </tr>
+                        <tr>
+                          <td>double</td>
+                          <td>64</td>
+                          <td>≈ 4.9 x 10<sup>-324</sup></td>
+                          <td>≈ 1.8 x 10<sup>308</sup></td>
+                          <td><code>double pi = 3.1415926535;</code></td>
+                        </tr>
+                        <tr>
+                          <td>char</td>
+                          <td>16</td>
+                          <td>'\u0000' (0)</td>
+                          <td>'\uffff' (65,535)</td>
+                          <td><code>char letra = 'A';</code></td>
+                        </tr>
+                        <tr>
+                          <td>boolean</td>
+                          <td>1</td>
+                          <td>false</td>
+                          <td>true</td>
+                          <td><code>boolean activo = true;</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3>Datos Wrapper:</h3>
+                    <p>
+                        En Java los tipos de datos wrapper pertenecen a clases dedicadas a convertir tipos de datos primitivos a no primitivos (por el momento no profundicemos en qué es una clase, lo veremos más adelante. Piensa que una clase es una caja que contiene cierta cantidad de objetos y métodos).
+                    </p>
+                    <h4>¿Por qué se convierten?</h4>
+                    <p>
+                        Se convierten principalmente para poder hacer operaciones de métodos y aplicarle lógica que lleva ese método con valores primitivos.
+                    </p>
+                    <h3 class="subsection-title">Clases Wrapper</h3>
+                    <p>Cada tipo primitivo en Java tiene una clase "envoltorio" (wrapper) que lo representa como un objeto. Esto es útil para usarlos en colecciones o APIs que requieren objetos.</p>
+                    <table class="data-table hidden">
+                      <thead>
+                        <tr>
+                          <th>TIPO PRIMITIVO</th>
+                          <th>CLASE WRAPPER</th>
+                          <th>EJEMPLO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>byte</td>
+                          <td>Byte</td>
+                          <td><code>Byte b = Byte.valueOf((byte)10);</code></td>
+                        </tr>
+                        <tr>
+                          <td>short</td>
+                          <td>Short</td>
+                          <td><code>Short s = Short.valueOf((short)100);</code></td>
+                        </tr>
+                        <tr>
+                          <td>int</td>
+                          <td>Integer</td>
+                          <td><code>Integer i = Integer.valueOf(10000);</code></td>
+                        </tr>
+                        <tr>
+                          <td>long</td>
+                          <td>Long</td>
+                          <td><code>Long l = Long.valueOf(10000L);</code></td>
+                        </tr>
+                        <tr>
+                          <td>float</td>
+                          <td>Float</td>
+                          <td><code>Float f = Float.valueOf(10000f);</code></td>
+                        </tr>
+                        <tr>
+                          <td>double</td>
+                          <td>Double</td>
+                          <td><code>Double d = Double.valueOf(3.1416);</code></td>
+                        </tr>
+                        <tr>
+                          <td>boolean</td>
+                          <td>Boolean</td>
+                          <td><code>Boolean flag = Boolean.valueOf(true);</code></td>
+                        </tr>
+                        <tr>
+                          <td>char</td>
+                          <td>Character</td>
+                          <td><code>Character c = Character.valueOf('a');</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3 class="subsection-title">Datos No Primitivos (de Referencia)</h3>
+                    <p>Estos tipos de datos almacenan una referencia (o dirección) a un objeto en la memoria. Pueden tener métodos y su valor puede ser nulo.</p>
+                    <table class="data-table hidden">
+                      <thead>
+                        <tr>
+                          <th>Tipo</th>
+                          <th>Ejemplo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>String</td>
+                          <td><code>String s = "hola";</code></td>
+                        </tr>
+                        <tr>
+                          <td>Arrays</td>
+                          <td><code>int[] arr = {1, 2, 3};</code></td>
+                        </tr>
+                        <tr>
+                          <td>Clases</td>
+                          <td><code>Persona p = new Persona();</code></td>
+                        </tr>
+                        <tr>
+                          <td>Interfaces</td>
+                          <td><code>List&lt;String&gt; lista = new ArrayList&lt;&gt;();</code></td>
+                        </tr>
+                        <tr>
+                          <td>Wrappers</td>
+                          <td><code>Integer num = 10;</code></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </section>
+
+                <section id="variables" class="content-section">
+                    <h2>Variables y Palabras Reservadas</h2>
+                    <div class="variable-explicacion-flex">
+                        <div class="variable-explicacion-texto">
+                            <p>Una variable matemáticamente es la asignación de un carácter a un valor numérico perteneciente a un conjunto matemático. En programación una variable es un espacio en memoria el cual contiene un único dato (la cantidad de variables que puede almacenar una máquina depende de sus especificaciones de hardware como la RAM). Con ese dato asignado a la variable se pueden hacer múltiples operaciones según la lógica programada.</p>
+                        </div>
+                        <div class="variable-explicacion-img">
+                            <img src="img/imagen_variable.svg" alt="Ilustración de variable" />
+                        </div>
+                    </div>
+                    <h3>¿Qué es una palabra reservada?</h3>
+                    <p>Una palabra reservada o una keyword es un término especial definido por el lenguaje que tiene un significado específico y no puede ser usado como identificador (nombre de variable, método, clase, etc.).</p>
+                    <div class="nota-importante">
+                        <strong>Nota importante</strong><br>
+                        Las palabras reservadas están en minúsculas y son case-sensitive.<br>
+                        Algunas palabras como true, false y null no son keywords, sino literales reservados, pero tampoco pueden usarse como identificadores.
+                    </div>
+                    <h3 class="subsection-title">Mapa de Palabras Reservadas</h3>
+                    <div class="mind-map-container">
+                        <div class="mind-map-card contexto-especial">
+                          <h5>CONTEXTO ESPECIAL</h5>
+                          <ul>
+                            <li>var (inferencia de tipos)</li>
+                            <li><em>(uso restringido)</em></li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card control-flujo">
+                          <h5>CONTROL DE FLUJO</h5>
+                          <ul>
+                            <li>if - else</li>
+                            <li>switch - case</li>
+                            <li>for - while - do</li>
+                            <li>break - continue</li>
+                            <li>return</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card manejo-excepciones">
+                          <h5>MANEJO DE EXCEPCIONES</h5>
+                          <ul>
+                            <li>try - catch - finally</li>
+                            <li>throw - throws</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card modificadores-claves">
+                          <h5>MODIFICADORES Y PALABRAS CLAVES</h5>
+                          <ul>
+                            <li>void</li>
+                            <li>package - import</li>
+                            <li>native, transient</li>
+                            <li>assert</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card mind-map-center">
+                          <h4>PALABRAS<br>RESERVADAS</h4>
+                        </div>
+                        <div class="mind-map-card modificadores-acceso">
+                          <h5>MODIFICADORES DE ACCESO</h5>
+                          <ul>
+                            <li>public - private</li>
+                            <li>protected</li>
+                            <li>static - final - abstract</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card control-hilos">
+                          <h5>CONTROL DE HILOS</h5>
+                          <ul>
+                            <li>synchronized</li>
+                            <li>volatile</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card objetos-clases">
+                          <h5>OBJETOS Y CLASES</h5>
+                          <ul>
+                            <li>class - interface - enum</li>
+                            <li>extends - implements</li>
+                            <li>new - this - super</li>
+                            <li>instanceof</li>
+                          </ul>
+                        </div>
+                        <div class="mind-map-card datos-primitivos">
+                          <h5>DATOS PRIMITIVOS</h5>
+                          <ul>
+                            <li>byte - short - int - long</li>
+                            <li>float - double</li>
+                            <li>char - boolean</li>
+                          </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="operadores" class="content-section">
+                    <h2>Expresiones</h2>
+                    <h3>Operadores aritméticos</h3>
+                    <p>Los operadores aritméticos en Java permiten realizar operaciones matemáticas básicas entre variables o valores. Son fundamentales para cualquier cálculo y se utilizan en expresiones para sumar, restar, multiplicar, dividir o calcular el resto de una división.</p>
+
+                    <div class="operadores-lista-horizontal">
+                      <div class="operador-card operator-link active" data-target="ejemplo-suma"><span class="variable-highlight">suma</span> <span>(+)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-resta"><span class="variable-highlight">resta</span> <span>(-)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-multiplicacion"><span class="variable-highlight">multiplicación</span> <span>(*)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-division"><span class="variable-highlight">división</span> <span>(/)</span></div>
+                      <div class="operador-card operator-link" data-target="ejemplo-modulo"><span class="variable-highlight">módulo</span> <span>(%)</span></div>
+                    </div>
+
+                    <div class="operadores-ejemplos-interactivos">
+                      <div class="explanation-card active" id="ejemplo-suma">
+                        <div class="code-terminal hidden">
+                          <div class="code-terminal-header">Suma (+)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
+int <span class="variable-highlight">b</span> = 3;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> + <span class="variable-highlight">b</span>; // resultado: 8
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-resta">
+                        <div class="code-terminal hidden">
+                          <div class="code-terminal-header">Resta (-)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 4;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> - <span class="variable-highlight">b</span>; // resultado: 6
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-multiplicacion">
+                        <div class="code-terminal hidden">
+                          <div class="code-terminal-header">Multiplicación (*)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
+int <span class="variable-highlight">b</span> = 6;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> * <span class="variable-highlight">b</span>; // resultado: 42
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-division">
+                        <div class="code-terminal hidden">
+                          <div class="code-terminal-header">División (/)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 12;
+int <span class="variable-highlight">b</span> = 4;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> / <span class="variable-highlight">b</span>; // resultado: 3
+</code></pre>
+                        </div>
+                      </div>
+                      <div class="explanation-card" id="ejemplo-modulo">
+                        <div class="code-terminal hidden">
+                          <div class="code-terminal-header">Módulo (%)</div>
+                          <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 3;
+int <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> % <span class="variable-highlight">b</span>; // resultado: 1
+</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="asignacion-compuesta-section">
+                      <h3 class="asignacion-compuesta-title">Operadores de asignación compuesta</h3>
+                      <p class="asignacion-compuesta-desc">
+                        son operadores que combinan una operación (aritmética) con una asignación en una sola expresión, permitiendo modificar el valor de una variable aplicándole una operación y asignando el resultado en un paso simplificado.
+                      </p>
+                      <h4 class="asignacion-compuesta-subtitle">Características clave:</h4>
+                      <ul class="asignacion-compuesta-list">
+                        <li>Simplifican código: Reemplazan expresiones como <span class="variable-highlight">x = x + 5</span> por <span class="variable-highlight">x += 5</span>.</li>
+                        <li>Eficiencia: Algunos compiladores los optimizan mejor que sus equivalentes largos.</li>
+                        <li>Legibilidad: Hacen evidente que la variable se está modificando.</li>
+                      </ul>
+
+                      <div class="operadores-lista-horizontal asignacion-compuesta-lista">
+                        <div class="operador-card operator-link-assign active" data-target="ejemplo-assign-suma"><span class="variable-highlight">+=</span> <span>suma y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-resta"><span class="variable-highlight">-=</span> <span>resta y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-mult"><span class="variable-highlight">*=</span> <span>multiplica y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-div"><span class="variable-highlight">/=</span> <span>divide y asigna</span></div>
+                        <div class="operador-card operator-link-assign" data-target="ejemplo-assign-mod"><span class="variable-highlight">%=</span> <span>módulo y asigna</span></div>
+                      </div>
+
+                      <div class="operadores-ejemplos-interactivos asignacion-compuesta-ejemplos">
+                        <div class="explanation-card active" id="ejemplo-assign-suma">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">+= (suma y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
+<span class="variable-highlight">x</span> += 5; // x ahora vale 15
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-resta">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">-= (resta y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 10;
+<span class="variable-highlight">x</span> -= 3; // x ahora vale 7
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-mult">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">*= (multiplica y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 4;
+<span class="variable-highlight">x</span> *= 2; // x ahora vale 8
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-div">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">/= (divide y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 20;
+<span class="variable-highlight">x</span> /= 4; // x ahora vale 5
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-assign-mod">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">%= (módulo y asigna)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 13;
+<span class="variable-highlight">x</span> %= 5; // x ahora vale 3
+</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="incremento-decremento-section">
+                      <h3 class="incremento-decremento-title">Operadores de incremento y decremento</h3>
+                      <p class="incremento-decremento-desc">
+                        los operadores de incremento y decremento solo suman (incremento) y restan (decremento) en una (1) unidad
+                      </p>
+                      <div class="operadores-lista-horizontal incremento-decremento-lista">
+                        <div class="operador-card operator-link-incdec active" data-target="ejemplo-inc"><span class="variable-highlight">++</span> <span>incremento</span></div>
+                        <div class="operador-card operator-link-incdec" data-target="ejemplo-dec"><span class="variable-highlight">--</span> <span>decremento</span></div>
+                      </div>
+                      <div class="operadores-ejemplos-interactivos incremento-decremento-ejemplos">
+                        <div class="explanation-card active" id="ejemplo-inc">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">++ (incremento)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
+<span class="variable-highlight">x</span>++;
+// x ahora vale 8
+</code></pre>
+                          </div>
+                        </div>
+                        <div class="explanation-card" id="ejemplo-dec">
+                          <div class="code-terminal hidden">
+                            <div class="code-terminal-header">-- (decremento)</div>
+                            <pre><code class="language-java">int <span class="variable-highlight">x</span> = 7;
+<span class="variable-highlight">x</span>--;
+// x ahora vale 6
+</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="relacionales-section">
+  <h3 class="relacionales-title">Operadores relacionales o condicionales.</h3>
+  <p class="relacionales-desc">
+    Los operadores relacionales (también llamados operadores de comparación) son símbolos que comparan dos valores y devuelven un resultado booleano (true o false). Se utilizan principalmente en estructuras condicionales (if, while, for) para tomar decisiones basadas en la relación entre variables o expresiones.
+  </p>
+  <div class="operadores-lista-horizontal relacionales-lista">
+    <div class="operador-card operator-link-rel active" data-target="ejemplo-igual"><span class="variable-highlight">==</span> <span>igual a</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-diferente"><span class="variable-highlight">!=</span> <span>diferente de</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-mayor"><span class="variable-highlight">&gt;</span> <span>mayor que</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-menor"><span class="variable-highlight">&lt;</span> <span>menor que</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-mayor-igual"><span class="variable-highlight">&gt;=</span> <span>mayor o igual</span></div>
+    <div class="operador-card operator-link-rel" data-target="ejemplo-menor-igual"><span class="variable-highlight">&lt;=</span> <span>menor o igual</span></div>
+  </div>
+  <div class="operadores-ejemplos-interactivos relacionales-ejemplos">
+    <div class="explanation-card active" id="ejemplo-igual">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">== (igual a)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 5;
+int <span class="variable-highlight">b</span> = 5;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> == <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-diferente">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">!= (diferente de)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 7;
+int <span class="variable-highlight">b</span> = 3;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> != <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-mayor">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">&gt; (mayor que)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 10;
+int <span class="variable-highlight">b</span> = 4;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &gt; <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-menor">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">&lt; (menor que)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 2;
+int <span class="variable-highlight">b</span> = 8;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &lt; <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-mayor-igual">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">&gt;= (mayor o igual)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 6;
+int <span class="variable-highlight">b</span> = 6;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &gt;= <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-menor-igual">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">&lt;= (menor o igual)</div>
+        <pre><code class="language-java">int <span class="variable-highlight">a</span> = 3;
+int <span class="variable-highlight">b</span> = 7;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> &lt;= <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="logicos-section">
+  <h3 class="logicos-title">operadores lógicos booleanos.</h3>
+  <p class="logicos-desc">
+    Los operadores lógicos booleanos son símbolos que permiten combinar o modificar expresiones condicionales (que evalúan a true o false) para construir lógicas más complejas. Se utilizan principalmente en estructuras de control como if, while o for para tomar decisiones basadas en múltiples condiciones.
+  </p>
+  <div class="operadores-lista-horizontal logicos-lista">
+    <div class="operador-card operator-link-log active" data-target="ejemplo-and"><span class="variable-highlight">&&</span> <span>AND (y)</span></div>
+    <div class="operador-card operator-link-log" data-target="ejemplo-or"><span class="variable-highlight">||</span> <span>OR (o)</span></div>
+    <div class="operador-card operator-link-log" data-target="ejemplo-not"><span class="variable-highlight">!</span> <span>NOT (no)</span></div>
+  </div>
+  <div class="operadores-ejemplos-interactivos logicos-ejemplos">
+    <div class="explanation-card active" id="ejemplo-and">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">&& (AND)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
+boolean <span class="variable-highlight">b</span> = false;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> && <span class="variable-highlight">b</span>; // false
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-or">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">|| (OR)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = true;
+boolean <span class="variable-highlight">b</span> = false;
+boolean <span class="variable-highlight">resultado</span> = <span class="variable-highlight">a</span> || <span class="variable-highlight">b</span>; // true
+</code></pre>
+      </div>
+    </div>
+    <div class="explanation-card" id="ejemplo-not">
+      <div class="code-terminal hidden">
+        <div class="code-terminal-header">! (NOT)</div>
+        <pre><code class="language-java">boolean <span class="variable-highlight">a</span> = false;
+boolean <span class="variable-highlight">resultado</span> = !<span class="variable-highlight">a</span>; // true
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+                </section>
+                
+                <section id="condicionales" class="content-section">
+                    <h2>Condicionales</h2>
+                    <p>En un entorno común una condición es un conjunto de acciones que se deben cumplir para que algo suceda.<br>
+Las plantas necesitan ciertas condiciones para crecer, como luz solar y agua. En Java, una condición es una expresión lógica (que evalúa a true o false) que determina el flujo de ejecución de un programa. A través de estructuras de control como if, else, switch o operadores ternarios, el programa decide qué bloque de código ejecutar basándose en si la condición se cumple (true) o no (false).</p>
+<h3 class="subtitulo-violeta">Estructura if-else</h3>
+<p>Tenemos la estructura if-else la cual sirve para determinar <strong>si</strong> una condición se cumple o no; por lo <strong>contrario</strong> se ejecutará la siguiente condición, el if-else es recomendado para cuando tenemos un programa ya con unas condiciones definidas algo que no crezca demasiado en el futuro para evitar unas condiciones en cascada, cuando tenemos N condiciones es mejor utilizar la expresión <strong>switch</strong>.</p>
+<div class="code-terminal hidden">
+  <div class="code-terminal-header">IfElseEjemplo.java</div>
+  <pre><code class="language-java">int edad = 18;
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad.");
+} else {
+    System.out.println("Eres menor de edad.");
+}
+</code></pre>
+</div>
+<h3 class="subtitulo-violeta">Estructura switch:</h3>
+<p>La estructura switch es un bloque de control que se utiliza para ejecutar uno o varios bloques de código basándose en el valor de una expresión por lo tanto es multidireccional.<br>
+Es especialmente útil cuando se necesitan comparar múltiples variables posibles con valor y ejecutar diferentes acciones según el caso.</p>
+<h3 class="subtitulo-violeta">Características Clave:</h3>
+<ol>
+  <li><strong>Multidireccional:</strong><br>
+    Evalúa una expresión una sola vez y dirige el flujo del programa a un bloque de código específico (case) según el valor coincidente.
+  </li>
+  <li><strong>Tipos admitidos (desde Java 7+):</strong>
+    <ul>
+      <li>Tipos primitivos: byte, short, char, int.</li>
+      <li>Tipos envoltorio: Byte, Short, Character, Integer.</li>
+      <li>String (Java 7+).</li>
+      <li>enum.</li>
+    </ul>
+  </li>
+  <li><strong>Componentes principales:</strong>
+    <ul>
+      <li><strong>switch:</strong> Inicia la estructura.</li>
+      <li><strong>case:</strong> Define un valor posible y su bloque de código asociado.</li>
+      <li><strong>break:</strong> Termina la ejecución del switch (opcional, pero recomendado).</li>
+      <li><strong>default:</strong> Bloque ejecutado si ningún case coincide (opcional).</li>
+    </ul>
+  </li>
+</ol>
+<div class="code-terminal hidden">
+  <div class="code-terminal-header">Sintaxis general del switch</div>
+  <pre><code class="language-java">switch (expresion) {
+    case valor1:
+        // Código a ejecutar si expresion == valor1
+        break;
+    case valor2:
+        // Código a ejecutar si expresion == valor2
+        break;
+    // ... más casos ...
+    default:
+        // Código si ningún caso coincide
+}
+</code></pre>
+</div>
+<div class="code-terminal hidden">
+  <div class="code-terminal-header">Forma básica del switch</div>
+  <pre><code class="language-java">int dia = 3;
+switch (dia) {
+    case 1:
+        System.out.println("Lunes");
+        break;
+    case 2:
+        System.out.println("Martes");
+        break;
+    case 3:
+        System.out.println("Miércoles");
+        break;
+    default:
+        System.out.println("Otro día");
+}
+</code></pre>
+</div>
+<div class="code-terminal hidden">
+  <div class="code-terminal-header">Switch con expresiones</div>
+  <pre><code class="language-java">int numero = 2 * 2;
+switch (numero) {
+    case 3 + 1:
+        System.out.println("Cuatro");
+        break;
+    case 2 * 3:
+        System.out.println("Seis");
+        break;
+    default:
+        System.out.println("Otro número");
+}
+</code></pre>
+</div>
+<h3 class="subtitulo-violeta">Operador ternario.</h3>
+<p>El operador ternario es una estructura condicional compacta que permite tomar decisiones en una sola línea. Es una versión simplificada de un if-else, diseñada para asignar valores o ejecutar expresiones basadas en una condición.</p>
+<h4 class="subtitulo-violeta">Componentes:</h4>
+<p><strong>Condición:</strong> Expresión booleana que se evalúa como true o false.<br>
+<strong>(?)</strong> Separa la condición del valor si es verdadero.<br>
+<strong>(:)</strong> Separa el valor verdadero del falso.</p>
+<div class="code-terminal hidden">
+  <div class="code-terminal-header">Sintaxis del operador ternario</div>
+  <pre><code class="language-java">resultado = (condicion) ? valorSiTrue : valorSiFalse;
+</code></pre>
+</div>
+                </section>
+
+                <section id="bucles" class="content-section">
+                    <h2>Bucles (Estructuras de Repetición)</h2>
+                    <p>Los bucles son bloques de control que permiten ejecutar un mismo código múltiples veces mientras se cumpla una condición. Son fundamentales para automatizar tareas repetitivas.</p>
+                    <h3 class="subtitulo-violeta">Estructura while (mientras)</h3>
+                    <p>Es una estructura de repetición que ejecuta un bloque de código mientras una condición es verdadera. La condición se evalúa antes de cada iteración, lo que significa que, si la condición es falsa desde el principio, el bucle no se ejecuta ni una sola vez.</p>
+                    <strong class="subtitulo-verde">Componentes:</strong>
+                    <ul>
+                        <li><strong>Inicialización:</strong> Dejar la variable necesaria para poder ejecutar el código</li>
+                        <li><strong>Condición:</strong> Cuando la condición es verdadera se ejecuta el código</li>
+                        <li><strong>Avance:</strong> Siempre tiene que haber una o varias instrucciones que hagan que con cada iteración el ciclo esté más cerca de terminar</li>
+                    </ul>
+                    <strong class="subtitulo-azul">Concepto clave:</strong>
+                    <ul>
+                        <li><strong>Iteración:</strong> Ejecutar repetidamente un conjunto de instrucciones dentro de un bucle.</li>
+                    </ul>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">WhileEjemplo.java</div>
+                      <pre><code class="language-java">int contador = 1;
+while (contador <= 5) {
+    System.out.println("Contador: " + contador);
+    contador++;
+}
+</code></pre>
+                    </div>
+                    <p><strong>Salida:</strong><br>
+Contador: 1<br>
+Contador: 2<br>
+Contador: 3<br>
+Contador: 4<br>
+Contador: 5
+</p>
+                    <h3 class="subtitulo-violeta">¿Cuándo Usar while?</h3>
+                    <ul>
+                        <li>Cuando el número de iteraciones es desconocido (ej: validaciones, lectura de datos).</li>
+                        <li>Para condiciones complejas que no dependen de un contador simple.</li>
+                        <li>En procesos interactivos (menús, juegos).</li>
+                    </ul>
+                    <strong class="subtitulo-violeta">Consejo clave:</strong>
+                    <p>Siempre asegúrate de que la condición del while eventualmente sea <strong>false</strong> para evitar bucles infinitos. Usa <code>break</code> o actualiza las variables de control dentro del bucle.</p>
+                    <h3 class="subtitulo-violeta">Bucle do - while.</h3>
+                    <p>El bucle do-while es una estructura de control que ejecuta un bloque de código al menos una vez, y luego repite la ejecución mientras una condición sea verdadera. A diferencia del bucle while (que evalúa la condición antes de ejecutar el código), el do-while evalúa la condición después de la primera iteración.</p>
+                    <h3 class="subtitulo-violeta">Flujo de ejecución</h3>
+                    <ul>
+                        <li>Ejecuta el bloque de código dentro del do.</li>
+                        <li>Evalúa la condición después de la ejecución.</li>
+                        <li>Si es true, repite el proceso.</li>
+                        <li>Si es false, sale del bucle.</li>
+                    </ul>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">DoWhileEjemplo.java</div>
+                      <pre><code class="language-java">int contador = 1;
+do {
+    System.out.println("Contador: " + contador);
+    contador++;
+} while (contador <= 5);
+// Salida:
+// Contador: 1
+// Contador: 2
+// Contador: 3
+// Contador: 4
+// Contador: 5
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Diferencias entre while y do-while</h3>
+                    <table class="data-table hidden">
+                      <thead>
+                        <tr>
+                          <th>Característica</th>
+                          <th>while</th>
+                          <th>do-while</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Evaluación de la condición</td>
+                          <td>Antes de ejecutar el bloque.</td>
+                          <td>Después de ejecutar el bloque.</td>
+                        </tr>
+                        <tr>
+                          <td>Primera iteración</td>
+                          <td>Puede no ejecutarse (si la condición inicial es false).</td>
+                          <td>Siempre se ejecuta al menos una vez (incluso si la condición es false).</td>
+                        </tr>
+                        <tr>
+                          <td>Uso típico</td>
+                          <td>Ideal cuando el número de iteraciones es desconocido y puede ser cero.</td>
+                          <td>Ideal cuando debes garantizar al menos una ejecución (ej: validaciones, menús interactivos).</td>
+                        </tr>
+                        <tr>
+                          <td>Ejemplo común</td>
+                          <td>Validar entrada después de un primer intento.</td>
+                          <td>Mostrar un menú hasta que el usuario elija salir.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3 class="subtitulo-violeta">Bucle for.</h3>
+                    <p>El bucle for es una estructura de control determinista diseñada para ejecutar un bloque de código un número específico de veces, con un control preciso sobre:</p>
+                    <ul>
+                        <li>Inicialización de una variable de control,</li>
+                        <li>Condición de continuación,</li>
+                        <li>Actualización del estado en cada iteración.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">conceptos de la sintaxis</h3>
+                    <p><strong>inicialización:</strong><br>
+                    Es donde defines e inicializas la variable de control (generalmente un contador).<br>
+                    Se ejecuta solo una vez, antes de que el bucle comience. <strong>Ejemplo:</strong> int i = 0.</p>
+                    <p><strong>Condición:</strong><br>
+                    Es una expresión booleana que se evalúa antes de cada iteración.<br>
+                    Si es true, el cuerpo del bucle se ejecuta; si es false, el bucle termina. <strong>Ejemplo:</strong> i &lt; 5.</p>
+                    <p><strong>Actualización:</strong><br>
+                    Es la operación que modifica la variable de control después de cada iteración.<br>
+                    Puede ser un incremento (i++), decremento (i--), u otra operación (i += 2). <strong>Ejemplo:</strong> i++.</p>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">ForEjemplo.java</div>
+                      <pre><code class="language-java">for (int i = 0; i < 5; i++) {
+    System.out.println("Valor de i: " + i);
+}
+// Salida:
+// Valor de i: 0
+// Valor de i: 1
+// Valor de i: 2
+// Valor de i: 3
+// Valor de i: 4
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Bucle for - each.</h3>
+                    <p>El bucle for-each (también llamado enhanced for loop) es una estructura simplificada diseñada específicamente para recorrer colecciones o arrays sin necesidad de manejar índices manualmente. Fue introducido en Java 5 para mejorar la legibilidad y reducir errores comunes.</p>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">ForEachEjemplo.java</div>
+                      <pre><code class="language-java">int[] numeros = {1, 2, 3, 4, 5};
+for (int num : numeros) {
+    System.out.println("Número: " + num);
+}
+// Salida:
+// Número: 1
+// Número: 2
+// Número: 3
+// Número: 4
+// Número: 5
+</code></pre>
+                    </div>
+                    <strong class="subtitulo-violeta">Limitaciones del for-each</strong>
+                    <ul>
+                        <li>No permite modificar el array/lista original (solo funciona con copias).</li>
+                        <li>No da acceso al índice (si necesitas el índice, usa for tradicional).</li>
+                        <li>No es compatible con todas las estructuras de datos (ej: no funciona con Map directamente).</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">Comparación: for Tradicional vs for-each</h3>
+                    <table class="data-table hidden">
+                      <thead>
+                        <tr>
+                          <th>Característica</th>
+                          <th>for Tradicional</th>
+                          <th>for-each</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Requiere índice</td>
+                          <td>Sí (i = 0; i &lt; length; i++)</td>
+                          <td>No</td>
+                        </tr>
+                        <tr>
+                          <td>Modifica elementos</td>
+                          <td>Permite modificar el array/list.</td>
+                          <td>Solo lectura (a menos que uses objetos mutables).</td>
+                        </tr>
+                        <tr>
+                          <td>Legibilidad</td>
+                          <td>Menos intuitivo</td>
+                          <td>Más claro y conciso</td>
+                        </tr>
+                        <tr>
+                          <td>Uso</td>
+                          <td>Cualquier iteración con lógica compleja.</td>
+                          <td>Solo para recorrer colecciones</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h3 class="subtitulo-violeta">¿Por qué son importantes?</h3>
+                    <p><strong>Control preciso:</strong> Permiten manejar casos excepcionales dentro de bucles.<br>
+                    <strong>Optimización:</strong> Evitan procesamiento innecesario (ej: con break).<br>
+                    <strong>Legibilidad:</strong> Hacen el código más claro al evitar anidamientos complejos.</p>
+                    <h3 class="subtitulo-violeta">consejos</h3>
+                    <p>Usa break y continue con moderación para no hacer el código difícil de seguir.<br>
+                    En su lugar, considera refactorizar con métodos pequeños.</p>
+                </section>
+
+                <section id="arrays" class="content-section">
+                    <h2>Arrays (Arreglos)</h2>
+                    <p>Los Arrays son estructuras de datos que permiten almacenar múltiples valores del mismo tipo en una sola variable. Su tamaño es fijo; una vez definidos, no pueden crecer o reducirse.</p>
+                    <h3 class="subtitulo-violeta">¿Qué es un array?</h3>
+                    <p>Un array en Java es una estructura de datos que permite almacenar múltiples valores del mismo tipo en una sola variable. Los arrays tienen un tamaño fijo y cada elemento se accede mediante un índice (empezando desde 0).</p>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">Declaración y creación de un array</div>
+                      <pre><code class="language-java">int[] numeros = new int[5]; // Crea un array de 5 enteros
+</code></pre>
+                    </div>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">Inicialización de un array</div>
+                      <pre><code class="language-java">int[] numeros = {10, 20, 30, 40, 50};
+</code></pre>
+                    </div>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">Acceso y recorrido de un array</div>
+                      <pre><code class="language-java">for (int i = 0; i < numeros.length; i++) {
+    System.out.println("Elemento en posición " + i + ": " + numeros[i]);
+}
+// Salida:
+// Elemento en posición 0: 10
+// Elemento en posición 1: 20
+// Elemento en posición 2: 30
+// Elemento en posición 3: 40
+// Elemento en posición 4: 50
+</code></pre>
+                    </div>
+                    <div class="code-terminal hidden">
+                      <div class="code-terminal-header">Recorrido con for-each</div>
+                      <pre><code class="language-java">for (int num : numeros) {
+    System.out.println("Número: " + num);
+}
+// Salida:
+// Número: 10
+// Número: 20
+// Número: 30
+// Número: 40
+// Número: 50
+</code></pre>
+                    </div>
+                    <h3 class="subtitulo-violeta">Casos de uso comunes</h3>
+                    <ul>
+                        <li>Almacenar listas de datos del mismo tipo (números, nombres, etc.).</li>
+                        <li>Procesar grandes cantidades de información de manera eficiente.</li>
+                        <li>Implementar estructuras de datos como pilas, colas o matrices.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">Limitaciones de los arrays</h3>
+                    <ul>
+                        <li>Tamaño fijo: no se puede cambiar después de su creación.</li>
+                        <li>No permiten almacenar diferentes tipos de datos en el mismo array.</li>
+                        <li>Acceso manual por índice, lo que puede llevar a errores si no se controla bien.</li>
+                    </ul>
+                    <h3 class="subtitulo-violeta">¿Cuándo usar un array?</h3>
+                    <ul>
+                        <li>Cuando conoces de antemano la cantidad de elementos a almacenar.</li>
+                        <li>Cuando necesitas acceso rápido y directo a los elementos por índice.</li>
+                        <li>Cuando todos los elementos son del mismo tipo de dato.</li>
+                    </ul>
+
+                </section>
+                <section id="ejercicios" class="content-section">
+                    <h2 class="subtitulo-violeta">Ejercicios</h2>
+                    <h3 class="subtitulo-violeta">¿Qué es Java?</h3>
+                    <ol>
+                        <li>Escribe un programa Java que imprima "¡Hola, Java!" en la consola.</li>
+                        <li>Modifica el programa anterior para que imprima tu nombre y tu edad.</li>
+                        <li>Crea un archivo llamado <code>MiClase.java</code> y escribe la estructura básica de una clase Java con un método <code>main</code>.</li>
+                        <li>Agrega un comentario en tu código explicando qué hace la función <code>main</code>.</li>
+                        <li>Compila y ejecuta tu programa desde la terminal. Escribe los comandos que usaste.</li>
+                        <li>Investiga y escribe para qué sirve la JVM en el proceso de ejecución de tu programa.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Fundamentos</h3>
+                    <ol>
+                        <li>Escribe un programa que pida al usuario dos números y muestre la suma.</li>
+                        <li>Modifica el programa para que también muestre la resta, multiplicación y división.</li>
+                        <li>Agrega comentarios en tu código explicando cada parte del ciclo de vida del programa (entrada, procesamiento, salida).</li>
+                        <li>Haz que el programa muestre un mensaje diferente si la suma es mayor a 100.</li>
+                        <li>Convierte el programa en un pseudocódigo antes de programarlo.</li>
+                        <li>Haz que el programa repita la operación hasta que el usuario escriba "salir".</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Tipos de Datos</h3>
+                    <ol>
+                        <li>Declara variables de todos los tipos primitivos en Java y asígnales un valor.</li>
+                        <li>Escribe un programa que convierta un <code>int</code> a <code>Integer</code> usando un wrapper.</li>
+                        <li>Imprime el valor máximo y mínimo de <code>int</code> usando las constantes de la clase <code>Integer</code>.</li>
+                        <li>Declara una variable <code>String</code> y muestra su longitud en consola.</li>
+                        <li>Convierte un <code>double</code> a <code>int</code> y muestra el resultado.</li>
+                        <li>Haz un programa que reciba un valor booleano y muestre un mensaje diferente según su valor.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Variables</h3>
+                    <ol>
+                        <li>Declara una variable de tipo <code>int</code> llamada <code>edad</code> y asígnale el valor 25. Imprime su valor.</li>
+                        <li>Intenta declarar una variable usando una palabra reservada y observa el error que produce.</li>
+                        <li>Declara una constante en Java y úsala en una operación matemática.</li>
+                        <li>Modifica el valor de una variable y muestra el resultado antes y después del cambio.</li>
+                        <li>Escribe un programa que pida al usuario su nombre y lo guarde en una variable.</li>
+                        <li>Declara una variable sin inicializar y luego asígnale un valor antes de usarla.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Operadores</h3>
+                    <ol>
+                        <li>Escribe un programa que reciba dos números y muestre el resultado de sumarlos, restarlos, multiplicarlos y dividirlos.</li>
+                        <li>Haz un programa que calcule el residuo de dividir dos números.</li>
+                        <li>Utiliza operadores de incremento y decremento en un ciclo y muestra los resultados.</li>
+                        <li>Escribe una expresión lógica que combine dos condiciones y muestra el resultado.</li>
+                        <li>Predice la salida de: <code>int x = 5; x += 3; x--;</code> ¿Cuál es el valor final de <code>x</code>?</li>
+                        <li>Corrige el siguiente código para que compile y funcione:
+<pre><code class="language-java">int a = 10
+if (a = 10) {
+    System.out.println("Diez");
+}</code></pre></li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Condicionales</h3>
+                    <ol>
+                        <li>Escribe un programa que pida la edad y muestre si eres mayor o menor de edad usando <code>if-else</code>.</li>
+                        <li>Haz un programa que reciba un número del 1 al 7 y muestre el día de la semana usando <code>switch</code>.</li>
+                        <li>Convierte una estructura <code>if-else</code> simple en un operador ternario.</li>
+                        <li>Corrige el siguiente código para que funcione:
+<pre><code class="language-java">int n = 5;
+if n > 3 {
+    System.out.println("Mayor que 3");
+}</code></pre></li>
+                        <li>Haz un programa que pida dos números y muestre cuál es mayor o si son iguales.</li>
+                        <li>Agrega una condición compuesta para verificar si un número está entre 10 y 20.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Bucles</h3>
+                    <ol>
+                        <li>Escribe un bucle <code>while</code> que imprima los números del 1 al 10.</li>
+                        <li>Haz un bucle <code>do-while</code> que pida números hasta que el usuario escriba 0.</li>
+                        <li>Escribe un bucle <code>for</code> que imprima los números pares del 2 al 20.</li>
+                        <li>Utiliza <code>break</code> para salir de un bucle cuando se cumpla una condición.</li>
+                        <li>Utiliza <code>continue</code> para saltar la impresión de un número específico en un bucle.</li>
+                        <li>Haz un programa que recorra un array usando <code>for-each</code> y sume todos sus elementos.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Arrays</h3>
+                    <ol>
+                        <li>Declara un array de 5 nombres y muestra cada uno en consola.</li>
+                        <li>Haz un programa que calcule el promedio de los valores en un array de enteros.</li>
+                        <li>Escribe un programa que busque un valor específico en un array y muestre su posición.</li>
+                        <li>Modifica un elemento de un array y muestra el array completo antes y después del cambio.</li>
+                        <li>Haz un programa que copie los elementos de un array en otro array.</li>
+                        <li>Declara un array bidimensional (matriz) de 3x3 e inicialízalo con valores del 1 al 9. Imprime la matriz.</li>
+                    </ol>
+                    <h3 class="subtitulo-violeta">Narrativas de negocio</h3>
+                    <ol>
+                        <li><strong>Cajero automático simple:</strong> Escribe un programa que simule un cajero automático. El usuario debe poder consultar su saldo, depositar y retirar dinero. Usa variables, condicionales y bucles.</li>
+                        <li><strong>Calculadora de promedios:</strong> Haz un programa que pida al usuario las calificaciones de 5 materias, las almacene en un array y calcule el promedio.</li>
+                        <li><strong>Gestor de inventario:</strong> Crea un programa que permita agregar, mostrar y buscar productos en un inventario simple usando arrays y bucles.</li>
+                        <li><strong>Encuesta de satisfacción:</strong> Escribe un programa que registre la respuesta de 10 clientes (satisfecho/insatisfecho) y al final muestre el porcentaje de satisfacción.</li>
+                        <li><strong>Control de acceso:</strong> Haz un programa que pida usuario y contraseña, y permita hasta 3 intentos antes de bloquear el acceso.</li>
+                        <li><strong>Menú interactivo:</strong> Crea un menú que permita al usuario elegir entre varias opciones (por ejemplo: ver saldo, transferir, salir) y repita hasta que elija salir.</li>
+                    </ol>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div class="compiler-modal" id="compilerModal">
+      <div class="compiler-modal-inner">
+        <div class="compiler-modal-header">
+          <span>Editor de código</span>
+          <button class="compiler-close" id="compilerClose">✕</button>
+        </div>
+        <textarea class="compiler-textarea" id="compilerTextarea" spellcheck="false"></textarea>
+        <div class="compiler-actions">
+          <span class="compiler-hint">Copia el código y pégalo en el compilador →</span>
+          <a href="https://www.jdoodle.com/online-java-compiler/" target="_blank" class="compiler-link">Abrir JDoodle ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</body>
+</html>
